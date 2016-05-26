@@ -3,3 +3,16 @@
 Homestead.yaml
 Homestead.json
 .env
+/app/Console/
+.DS_Store
+Thumbs.db
+composer.lock
+composer.phar
+/public/vendor/
+/public/js/plugins/
+/public/js/components/
+/public/js/configs/
+/public/js/sections/
+/public/js/site/
+/public/fonts/
+/public/bower_components/*

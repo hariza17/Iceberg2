@@ -1,0 +1,169 @@
+<nav class="site-navbar navbar navbar-light navbar-fixed-top navbar-mega" role="navigation">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle hamburger hamburger-close navbar-toggle-left hided" data-toggle="menubar">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="hamburger-bar"></span>
+		</button>
+		<button type="button" class="navbar-toggle collapsed" data-target="#site-navbar-collapse" data-toggle="collapse">
+			<i class="icon wb-more-horizontal" aria-hidden="true"></i>
+		</button>
+		<div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
+			<img src="/img/logotipo.png" class="navbar-brand-logo" style="width: 206px;display: block;" />
+			<span class="navbar-brand-text"></span>
+		</div>
+
+	</div>
+	<div class="navbar-container container-fluid">
+		<!-- Navbar Collapse -->
+		<div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
+			<!-- Navbar Toolbar -->
+			<ul class="nav navbar-toolbar">
+
+
+			</ul>
+			<!-- End Navbar Toolbar -->
+			<!-- Navbar Toolbar Right -->
+			<ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
+
+				<li class="dropdown">
+					<a class="navbar-avatar dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" data-animation="scale-up" role="button">
+						<span class="avatar avatar-online">
+                <img src="/img/avatar.png" alt="...">
+                <i></i>
+              </span>
+					</a>
+					<ul class="dropdown-menu" role="menu">
+						<li role="presentation">
+							<a href="javascript:void(0)" role="menuitem"><i class="icon wb-user" aria-hidden="true"></i> Perfil</a>
+						</li>
+
+						<li class="divider" role="presentation"></li>
+						<li role="presentation">
+							<a href="javascript:void(0)" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Logout</a>
+						</li>
+					</ul>
+				</li>
+
+			</ul>
+			<!-- End Navbar Toolbar Right -->
+		</div>
+		<!-- End Navbar Collapse -->
+		<!-- Site Navbar Seach -->
+
+		<!-- End Site Navbar Seach -->
+	</div>
+</nav>
+<div class="site-menubar">
+	<div class="site-menubar-body">
+		<div>
+			<div>
+				<ul class="site-menu">
+					<li class="site-menu-category">Menu</li>
+					<li class="site-menu-item has-sub">
+						<a ui-sref="main.beneficiarios" ng-click="barra()">
+							<i class="site-menu-icon wb-users" aria-hidden="true"></i>
+							<span class="site-menu-title">Beneficiarios</span>
+							<div class="site-menu-badge">
+								<!--span class="badge badge-success">2</span-->
+							</div>
+						</a>
+
+					</li>
+
+					<li class="site-menu-item has-sub">
+						<a ui-sref="main.programas" ng-click="barra()">
+							<i class="site-menu-icon wb-text-type" aria-hidden="true"></i>
+							<span class="site-menu-title">Programas</span>
+							<div class="site-menu-badge">
+								<!--span class="badge badge-success">2</span-->
+							</div>
+						</a>
+
+					</li>
+
+					<li class="site-menu-item has-sub">
+						<a ui-sref="main.actividades" ng-click="barra()">
+							<i class="site-menu-icon wb-warning" aria-hidden="true"></i>
+							<span class="site-menu-title">Actividades</span>
+							<div class="site-menu-badge">
+								<!--span class="badge badge-success">2</span-->
+							</div>
+						</a>
+
+					</li>
+					<li class="site-menu-item has-sub">
+						<a ui-sref="main.zonas" ng-click="barra()">
+							<i class="site-menu-icon wb-extension" aria-hidden="true"></i>
+							<span class="site-menu-title">Zonas</span>
+							<div class="site-menu-badge">
+								<!--span class="badge badge-success">2</span-->
+							</div>
+						</a>
+
+					</li>
+					<li class="site-menu-item has-sub">
+						<a ui-sref="main.empleados" ng-click="barra()">
+							<i class="site-menu-icon wb-file" aria-hidden="true"></i>
+							<span class="site-menu-title">Empleados</span>
+							<div class="site-menu-badge">
+								<!--span class="badge badge-success">2</span-->
+							</div>
+						</a>
+
+						<ul class="site-menu-sub">
+							<li class="site-menu-item has-sub">
+								<a ui-sref="main.perfiles">
+									<span class="fa fa-file-text-o"></span> Perfiles </a>
+							</li>
+						</ul>
+
+					</li>
+
+				</ul>
+
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<!-- Page -->
+<div class="page animation-fade" ui-view>
+	<div class="page-content padding-30 container-fluid">
+		<div class="row" data-plugin="matchHeight" data-by-row="true">
+			<div class="col-xlg-7 col-md-12">
+				<!-- Widget Linearea Color -->
+				<div class="widget widget-shadow widget-responsive" id="widgetLineareaColor">
+					<div class="widget-content">
+						<div class="padding-top-30 padding-30" style="height:calc(100% - 250px);">
+							<div class="row">
+								<div class="col-xs-7">
+									<p class="font-size-20 blue-grey-700">ICEBERG</p>
+									<p>
+									</p>
+									<div class="counter counter-md text-left">
+										<div class="counter-number-group">
+											<span class="counter-icon red-600"><i class="icon wb-triangle-up" aria-hidden="true"></i></span>
+											<span class="counter-number red-600">Fundacion Puerto Bahía</span>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<!-- End Widget Linearea Color -->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Page -->
+<!-- Footer -->
+<footer class="site-footer">
+	<div class="site-footer-right">© 2016</div>
+	<div class="text-center">
+		Hecho con <i class="cyan-600 wb wb-heart"></i> por la Fundacion Puerto Bahía
+	</div>
+</footer>
