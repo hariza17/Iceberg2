@@ -14,4 +14,21 @@
 Route::get('/','PagesController@index');
 
 
-//Route::resource('estrategia', 'EstrategiaController');
+
+Route::resource('accion', 'AccionController');
+Route::resource('actividad', 'ActividadController');
+Route::resource('asistencia', 'AsistenciaController');
+Route::resource('beneficiario', 'BeneficiarioController');
+Route::resource('consejo_comunitario', 'ConsejoComunitarioController');
+Route::resource('empleado', 'EmpleadoController');
+Route::resource('evaluacion', 'EvaluacionController');
+Route::resource('indicador', 'IndicadorController');
+Route::get('indicador/col/{col}', 'IndicadorController@showBy');
+
+
+Route::resource('objetivo', 'ObjetivoController');
+Route::resource('perfil', 'PerfilController');
+Route::resource('programa', 'ProgramaController');
+Route::resource('programacion', 'ProgramacionController');
+Route::resource('usuario', 'UsuarioController');
+Route::resource('zona', 'ZonaController');

@@ -40,7 +40,9 @@ icebergApp.config(['$stateProvider', '$urlRouterProvider', 'toastrConfig','$loca
         $stateProvider
                 .state('main', {
                     url: '/app',
-                    templateUrl: '/js/app/views/main.html'
+                    templateUrl: '/js/app/views/main.html',
+					controller:'mainController'
+
                 })
                 .state('login', {
                     url: '/login',

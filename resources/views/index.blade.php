@@ -94,6 +94,7 @@
 	<script src="/js/app/services/indicadorService.js"></script>
 	<script src="/js/app/services/actividadService.js"></script>
 
+	<script src="/js/app/controllers/mainController.js"></script>
 	<script src="/js/app/controllers/loginController.js"></script>
 	<script src="/js/app/controllers/zonaController.js"></script>
 	<script src="/js/app/controllers/beneficiarioController.js"></script>
