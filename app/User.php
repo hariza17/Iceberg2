@@ -21,14 +21,14 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var string
      */
-    protected $table = 'users';
+    protected $table = 'usuarios';
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = ['email', 'password'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -36,4 +36,22 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+										
+										
+    public $timestamps = false;
+
+	public function empleados()
+    {
+		return $this->belongsToMany('App\Models\Empleado');
+    }
+
+	public function zona()
+  	{
+		return $this->hasOne('App\Models\Zona');
+  	}
+
+	public function perfil()
+  	{
+		return $this->hasOne('App\Models\Perfil');
+  	}
 }

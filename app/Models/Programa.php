@@ -18,8 +18,10 @@ class Programa extends Model
 		return $this->hasMany('App\Models\Objetivo');
     }
 
-	public function beneficiarios()
+	
+	
+	public function beneficiario_programa()
     {
-		return $this->belongsToMany('App\Models\Beneficiario');
+		return $this->hasMany('App\Models\BeneficiarioPrograma');
     }
 }

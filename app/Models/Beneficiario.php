@@ -17,9 +17,10 @@ class Beneficiario extends Model
         return $this->belongsTo('App\Models\Zona');
     }
 
-	public function programas()
+	
+	public function beneficiario_programa()
     {
-		return $this->belongsToMany('App\Models\Programa');
+		return $this->hasMany('App\Models\BeneficiarioPrograma');
     }
 
 

@@ -25,6 +25,8 @@ Route::resource('evaluacion', 'EvaluacionController');
 Route::resource('indicador', 'IndicadorController');
 Route::get('indicador/col/{col}', 'IndicadorController@showBy');
 
+Route::post('auth_login', 'ApiAuthController@UserAuth');
+
 
 Route::resource('objetivo', 'ObjetivoController');
 Route::resource('perfil', 'PerfilController');

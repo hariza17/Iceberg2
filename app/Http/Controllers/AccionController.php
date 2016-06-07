@@ -18,13 +18,12 @@ class AccionController extends Controller
 
 
 	public function __construct(){
-
 		$this->beforeFilter('@find',['only'=>['show','update','destroy']]);
-
 	}
 
 	public function find(Route $route)
 	{
+		
 		$this->accion=Accion::find($route->getParameter('accion'));
 		//dd($this->indicador);
 
