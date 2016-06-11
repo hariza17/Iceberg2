@@ -21,37 +21,22 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var string
      */
-    protected $table = 'usuariosd';
+    protected $table = 'users';
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['email', 'password'];
+    protected $fillable = ['name','email', 'password'];
+
+	protected $hidden = ['password', 'remember_token'];
 
     /**
      * The attributes excluded from the model's JSON form.
      *
      * @var array
      */
-    protected $hidden = ['password', 'remember_token'];
-										
-										
-    public $timestamps = false;
 
-	public function empleados()
-    {
-		return $this->belongsToMany('App\Models\Empleado');
-    }
 
-	public function zona()
-  	{
-		return $this->hasOne('App\Models\Zona');
-  	}
-
-	public function perfil()
-  	{
-		return $this->hasOne('App\Models\Perfil');
-  	}
 }

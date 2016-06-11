@@ -53,7 +53,12 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        Usuario::create($request->all());
+
+        $email=$request->input('email');
+        $password=$request->input('password');
+        $username=$request->input('username');
+
+        Usuario::create(['email' => $email, 'password' => bcrypt($password), 'username' => $username]);
 		return response()->json(["mensaje"=>"Creado correctamente"]);
     }
 

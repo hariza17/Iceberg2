@@ -10,31 +10,31 @@ use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
 
-class Usuario extends Model  implements AuthenticatableContract,
-                                    AuthorizableContract
-                                    
+class Usuario extends Model implements AuthenticatableContract,
+    AuthorizableContract
+
 {
-	use Authenticatable, Authorizable;
-										
+    use Authenticatable, Authorizable;
+
     protected $table = 'usuarios';
 
-	protected $fillable=['usuario','password','empleado_id'];
+    protected $fillable = ['email', 'password', 'empleado_id', 'perfil_id', 'zona_id'];
 
-	public $timestamps = false;
+    public $timestamps = false;
 
-	public function empleados()
+    public function empleados()
     {
-		return $this->belongsToMany('App\Models\Empleado');
+        return $this->belongsToMany('App\Models\Empleado');
     }
 
-	public function zona()
-  	{
-		return $this->hasOne('App\Models\Zona');
-  	}
+    public function zona()
+    {
+        return $this->hasOne('App\Models\Zona');
+    }
 
-	public function perfil()
-  	{
-		return $this->hasOne('App\Models\Perfil');
-  	}
+    public function perfil()
+    {
+        return $this->hasOne('App\Models\Perfil');
+    }
 
 }
