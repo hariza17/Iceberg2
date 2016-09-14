@@ -15,7 +15,7 @@ class PagesController extends Controller
      */
     public function index()
     {
-       	$apiUrl='http://localhost:8000/';
+       	$apiUrl=env('APIURL');
     	return view('index')->with('apiUrl', $apiUrl);
     }
 

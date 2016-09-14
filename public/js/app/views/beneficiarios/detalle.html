@@ -1,63 +1,89 @@
-<div class="chute chute-center micontent">
-	<div class="row">
-		<div class="col-md-4">
-			<div class="row">
-				<div class="col-md-12 panel panel-primary">
-					<img src="assets/img/ic_zona.png" class="ic-zona center-block">
-					<h1 class="mi-zona-title">{{zona.nombre | capitalize}}</h1>
 
-					<div class="tools-zonas">
-						<h3 class="text-rigth text-center">{{zona.nombre}}</h3>
-						<h5 class="text-rigth text-center text-system">Juan puerto bahia</h5>
-						<button type="button" class="btn btn-primary btn-block">Editar</button>
-						<button type="button" class="btn btn-danger btn-block">Eliminar</button>
-
-					</div>
-				</div>
-				<div class="col-md-4">
-
-				</div>
+<div class="page-content container-fluid page-profile">
+    <div class="row">
 
 
+        <div class="col-md-3">
+            <!-- Page Widget -->
+             <div class="widget widget-shadow text-center">
+                <div class="widget-header">
+                    <div class="widget-header-content">
+                        <a class="avatar avatar-lg" href="javascript:void(0)">
+                            <!--img src="/img/avatar2.png" alt="..."-->
+                            <img src="http://hombre.starmedia.com/imagenes/2012/12/facebook350.jpg"
+                                 alt="...">
+                            <!--img src="http://savio.utbvirtual.edu.co/user/external_user_pic.php/{{estudiante.codigo}}/f1" alt="..."-->
+                        </a>
+                        <h4 class="profile-user">{{beneficiario.primer_nombre + ' '+beneficiario.segundo_nombre}} {{beneficiario.primer_apellido + ' '+beneficiario.segundo_apellido}}</h4>
+                        <p class="profile-job">{{beneficiario.programa}}</p>
+                        <address>
+                            <strong>Informacion de contacto</strong>
+                            <br> <abbr title="Barrio">Barrio:</abbr><a href="mailto:#"> {{beneficiario.barrio}}</a>
+                            <br><abbr title="Direccion">Direccion:</abbr> {{beneficiario.direccion}}
+                            <br>
+                            <abbr title="Telefono">Telefono: </abbr> {{beneficiario.telefono}}
+                            <br><abbr title="Zona">Zona: </abbr> {{beneficiario.zona_id}}
+                        </address>
+                        <!--div class="profile-social">
+                            <a class="icon bd-twitter" href="javascript:void(0)"></a>
+                            <a class="icon bd-facebook" href="javascript:void(0)"></a>
+                            <a class="icon bd-dribbble" href="javascript:void(0)"></a>
+                            <a class="icon bd-github" href="javascript:void(0)"></a>
+                        </div-->
+                        <!--button type="button" class="btn btn-primary">Follow</button-->
+                    </div>
+                </div>
+                <div class="widget-footer">
+                    <div class="row no-space">
+                        <div class="col-xs-4">
+                            <strong class="profile-stat-count">ID</strong>
+                            <span>{{beneficiario.identificacion}}</span>
+                        </div>
+                        <div class="col-xs-4">
+                            <strong class="profile-stat-count">Edad</strong>
+                            <span>{{getEdad(beneficiario.fecha_nacimiento)}}</span>
 
-			</div>
-
-		</div>
-		<div class="col-md-8">
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-					<span class="panel-title">Descripcion</span>
-				</div>
-				<div class="panel-body ">
-					<p>{{zona.descripcion}}</p>
-				</div>
-			</div>
-
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-					<span class="panel-title">Consejo comunitario</span>
-				</div>
-				<div class="panel-body">
-					<div class="well blockquote-rounded mv20">
-						<address>
-							<strong>Presidente</strong>
-							<br>Juan luis guerra
-							<br>Tel: 310 6672097
-							<br>
-						</address>
-						<address>
-							<strong>Miembros</strong>
-							<br>Juan pablo perez
-							<br>Juan pablo perez
+                        </div>
+                        <div class="col-xs-4">
+                            <strong class="profile-stat-count">Sexo</strong>
+                            <span>{{beneficiario.sexo}}</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- End Page Widget -->
+        </div>
 
 
-						</address>
-					</div>
-				</div>
-			</div>
-		</div>
+        <div class="col-md-9">
+            <!-- Panel -->
+            <div class="panel">
+                <div class="panel-body nav-tabs-animate">
+                    <uib-tabset active="">
+                        <uib-tab index="0" heading="Intervenciones">
+                            <div class="tab-content animation-fade">
+                               
+                            </div>
+                        </uib-tab>
 
-	</div>
+                        <uib-tab index="1" heading="Academica">
+                            <div class="tab-content animation-fade">
+                                Informacion Academica
+                            </div>
+                        </uib-tab>
+                        <uib-tab index="2" heading="Financiera">
+                            <div class="tab-content animation-fade">
+                                Informacion Financiera
+                            </div>
+                        </uib-tab>
+                    </uib-tabset>
 
 
+                </div>
+            </div>
+            <!-- End Panel -->
+        </div>
+    </div>
 </div>
+

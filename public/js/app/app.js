@@ -10,6 +10,7 @@ var icebergApp = angular.module("icebergApp", [
 	'AppControllers',
 	'AppServices',
     'toastr',
+    'angular-confirm',
 	'ui.bootstrap',
 	'angular-click-outside',
 	'am.multiselect'
@@ -33,7 +34,7 @@ icebergApp.config(['$stateProvider', '$urlRouterProvider', 'toastrConfig','$loca
 		target: 'body'
 	});
 
-	$urlRouterProvider.otherwise('/login');
+        $urlRouterProvider.otherwise('/login');
 
 	  $urlRouterProvider.otherwise('/login');
 
@@ -48,6 +49,7 @@ icebergApp.config(['$stateProvider', '$urlRouterProvider', 'toastrConfig','$loca
                     url: '/login',
                     templateUrl: '/js/app/views/login.html'
                 }) //ZONAS ROUTES
+
                 .state('main.zonas', {
                     url: '/zona',
                     templateUrl: '/js/app/views/zonas/base.html',
@@ -92,6 +94,7 @@ icebergApp.config(['$stateProvider', '$urlRouterProvider', 'toastrConfig','$loca
                     templateUrl: '/js/app/views/beneficiarios/crear.html',
                     controller: 'beneficiarioEditarController'
                 })
+                
 
                 //PERFILES ROUTES
                 .state('main.perfiles', {

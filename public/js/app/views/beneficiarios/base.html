@@ -1,85 +1,108 @@
-<div class="row">
-	<div class="col-md-12">
-		<header id="topbar" class="alt">
-			<div class="topbar-left">
-				<ol class="breadcrumb">
-					<li class="text-system">
-						<a ui-sref="main.zonas">
-							<span class="fa fa-map-marker"></span>
-						</a>
-					</li>
-					<li class="breadcrumb-active">
-						<a class="text-system">Beneficiarios</a>
-					</li>
+<div class="page-header">
 
-				</ol>
-			</div>
-			<div class="topbar-right">
-
-				<div class="btn-group">
-					<a class="btn btn-primary" ui-sref="main.beneficiarios.crear">
-						<i class="fa fa-plus"></i>
-					</a>
-
-				</div>
-
-			</div>
-		</header>
+	<h1 class="page-title">Beneficiarios</h1>
+	<ol class="breadcrumb">
+		<li><a ui-sref="main">Inicio</a></li>
+		<li><a ui-sref="main.beneficiarios" ng-click="barra()">beneficiarios</a></li>
+		<li ng-hide="titulo == 'NO'">{{titulo}}</li>
+	</ol>
+	<div class="page-header-actions">
+	<a ui-sref="main.beneficiarios.crear" class="btn btn-sm btn-icon btn-inverse btn-round" data-toggle="tooltip" data-original-title="Edit">
+			<i class="icon wb-plus" aria-hidden="true"></i>
+		</a>
+		<!--
+			<button type="button" class="btn btn-sm btn-icon btn-inverse btn-round" data-toggle="tooltip" data-original-title="Refresh">
+				<i class="icon wb-refresh" aria-hidden="true"></i>
+			</button>
+			<button type="button" class="btn btn-sm btn-icon btn-inverse btn-round" data-toggle="tooltip" data-original-title="Setting">
+				<i class="icon wb-settings" aria-hidden="true"></i>
+			</button>-->
 	</div>
 </div>
-<br>
+<div class="page-content" ui-view>
+	<div class="panel">
+		<div class="panel-heading">
+			<h3 class="panel-title"></h3>
+		</div>
+		<div class="panel-body container-fluid">
+			<div class="example">
 
+				<div class="bootstrap-table">
+					<div class="fixed-table-toolbar">
+						<div class="bars pull-left">
+							<div class="btn-group hidden-xs" id="exampleToolbar" role="group">
+								<a ui-sref="main.beneficiarios.crear" class="btn btn-outline btn-default">
+									<i class="icon wb-plus" aria-hidden="true"></i>
+								</a>
+								<button type="button" class="btn btn-outline btn-default">
+									<i class="icon wb-download" aria-hidden="true"></i>
+								</button>
+								<button type="button" class="btn btn-outline btn-default">
+									<i class="icon wb-trash" aria-hidden="true"></i>
+								</button>
+							</div>
+						</div>
 
-<div ui-view>
+						<div class="pull-right search">
+							<input class="form-control input-outline" type="text" ng-model="buscar" placeholder="Buscar">
+						</div>
+					</div>
+					<div class="fixed-table-container" style="padding-bottom: 0px;">
+						<div class="fixed-table-body">
+							<div class="fixed-table-loading" style="top: 37px; display: none;">Loading, please wait...</div>
+							<table id="exampleTableToolbar" data-mobile-responsive="true" class="table table-hover">
+								<thead>
+									<tr>
+										<th>Identificación</th>
+										<th>Nombres</th>
+										<th>Apellidos</th>
+										<th>Sexo</th>
+										<th>Zona</th>
+									</tr>
+								</thead>
+								<tbody>
 
-	<div class="chute chute-center" style="height: 830px;">
+									<tr ng-repeat="beneficiario in beneficiarios| filter:buscar">
+										<td>{{beneficiario.identificacion}}</td>
+										<td>{{beneficiario.primer_nombre}} {{beneficiario.segundo_nombre}}</td>
+										<td>{{beneficiario.primer_apellido}} {{beneficiario.segundo_apellido}}</td>
+										<td>{{beneficiario.sexo}}</td>
+										<td>{{beneficiario.zona_id}}</td>
+										<td
+											class="col-md-2">
+											<a type="button" class="btn btn-sm btn-icon btn-flat btn-default"  ui-sref="main.beneficiarios.detalle({beneficiarioId:beneficiario.id})">
+												<i class="icon wb-eye" aria-hidden="true"></i>
+											</a>
+											<a type="button" class="btn btn-sm btn-icon btn-flat btn-default" ui-sref="main.beneficiarios.editar({beneficiarioId:beneficiario.id})">
+												<i class="icon wb-pencil" aria-hidden="true"></i>
+											</a>
+											<a type="button" class="btn btn-sm btn-icon btn-flat btn-default" ng-click="remove(beneficiario.id)">
+												<i class="icon wb-trash" aria-hidden="true"></i>
+											</a>
+										</td>
 
-		<!-- -------------- Basic FooTable -------------- -->
-		<div class="panel" id="spy1">
-			<div class="panel-heading">
-				<span class="panel-title">Listado de beneficiarios</span>
-			</div>
-			<div class="panel-body pn">
-				<div class="table-responsive">
-					<table class="table footable no-paging footable-loaded">
-						<thead>
-							<tr>
-								<th class="footable-sortable">Identificacion<span class="footable-sort-indicator"></span></th>
-								<th class="footable-sortable footable-sorted-desc">Primer nombre<span class="footable-sort-indicator"></span></th>
-								<th class="footable-sortable">Segundo nombre<span class="footable-sort-indicator"></span></th>
-								<th class="footable-sortable">Primer apellido<span class="footable-sort-indicator"></span></th>
-								<th class="footable-sortable">Segundo apellido<span class="footable-sort-indicator"></span></th>
-								<th class="footable-sortable">Zona<span class="footable-sort-indicator"></span></th>
-								<th class="footable-sortable">Sexo<span class="footable-sort-indicator"></span></th>
-								<th class="footable-sortable">Telefono<span class="footable-sort-indicator"></span></th>
-							</tr>
-						</thead>
-						<tbody>
+									
+									</tr>
+									<tr class="no-records-found" style="display:none;">
+										<td colspan="5">No hay datos</td>
+									</tr>
 
-
-
-
-
-
-							<tr class="footable-even" style="display: table-row;" ng-repeat="beneficiario in beneficiarios">
-								<td><span class="footable-toggle"></span>{{beneficiario.identificacion}}</td>
-								<td>{{beneficiario.primer_nombre}}</td>
-								<td>{{beneficiario.segundo_nombre}}</td>
-								<td>{{beneficiario.primer_apellido}}</td>
-								<td>{{beneficiario.segundo_apellido}}</td>
-								<td>{{beneficiario.zona.nombre}}</td>
-								<td>{{beneficiario.sexo}}</td>
-								<td>{{beneficiario.telefono}}</td>
-
-							</tr>
-
-						</tbody>
-					</table>
+								</tbody>
+							</table>
+						</div>
+						<div class="fixed-table-footer" style="display: none;">
+							<table>
+								<tbody>
+									<tr></tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="fixed-table-pagination" style="display: none;"></div>
+					</div>
 				</div>
+				<div class="clearfix"></div>
 			</div>
 		</div>
-
-
 	</div>
 
 </div>

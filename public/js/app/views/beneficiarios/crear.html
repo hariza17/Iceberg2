@@ -1,19 +1,72 @@
 <div>
 	<div class="row">
-		<div class="col-md-12 modal-form">
-			<div class="panel panel-primary ">
+		<div class="col-md-12">
+
+			<div class="panel">
 				<div class="panel-heading">
-					<span class="panel-title">Crear zona</span>
-					<div class="panel-body">
-						<form class="form-horizontal" role="form">
+					<h3 class="panel-title">{{titulo}}</h3>
+				</div>
+				<div class="panel-body">
 
+					<form  method="post" ng-submit="guardar()">
+						<div class="form-group">
+								<label class="control-label" for="inputPrimerN">Primer nombre :</label>
+
+								<div class="">
+									<div class="bs-component">
+									<input type="text" id="inputPrimerN" class="form-control" ng-model="beneficiario.primer_nombre">
+									</div>
+								</div>
+							</div>
+
+						<div class="form-group">
+								<label class="control-label" for="inputSeguntoN">Segundo nombre :</label>
+								<div class="">
+									<div class="bs-component">
+										<input type="text" id="inputSeguntoN" class="form-control" ng-model="beneficiario.segundo_nombre">
+									</div>
+								</div>
+							</div>
+
+
+						<div class="form-group">
+								<label class="control-label" for="inputPrimerA">Primer apellido :</label>
+
+								<div class="">
+									<div class="bs-component">
+										<input type="text" id="inputPrimerA" class="form-control" ng-model="beneficiario.primer_apellido">
+									
+									</div>
+								</div>
+							</div>
+
+						<div class="form-group">
+								<label class="control-label" for="inputSeguntoA">Segundo apellido :</label>
+
+								<div class="">
+									<div class="bs-component">
+										<input type="text" id="inputSeguntoA" class="form-control" ng-model="beneficiario.segundo_apellido">
+									
+									</div>
+								</div>
+							</div>
 
 							<div class="form-group">
-								<label for="inputStandard" class="col-lg-3 control-label">Nombre</label>
+								<label for="inputIdentificacion" class="control-label">Identificación :</label>
 
-								<div class="col-lg-8">
+								<div class="">
 									<div class="bs-component">
-										<input type="text" id="inputStandard" class="form-control" ng-model="zona.nombre">
+										<input type="text" id="inputIdentificacion" class="form-control" ng-model="beneficiario.identificacion">
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="inputFechainputIdentificacion" class="control-label">F. de Nacimiento :</label>
+
+								<div class="">
+									<div class="bs-component">
+								<input type="date" id="inputFecha" class="form-control" ng-model="beneficiario.fecha_nacimiento">
 									</div>
 								</div>
 							</div>
@@ -21,15 +74,71 @@
 
 
 							<div class="form-group">
-								<label class="col-lg-3 control-label" for="textArea2">Descripcion</label>
+								<label class="control-label" for="inputSexoinputFecha">Sexo :</label>
 
-								<div class="col-lg-8">
+								<div class="">
 									<div class="bs-component">
-										<textarea class="form-control" id="textArea2" rows="3" ng-model="zona.descripcion"></textarea>
-										<div id="source-button" class="btn btn-system btn-xs" style="display: none;">&lt; &gt;</div>
+										<input type="text" id="inputSexo" class="form-control" ng-model="beneficiario.sexo">
 									</div>
 								</div>
 							</div>
+
+							<div class="form-group">
+								<label for="inputBarrioinputSexo" class="control-label">Barrio :</label>
+
+								<div class="">
+									<div class="bs-component">
+										<input type="text" id="inputBarrio" class="form-control" ng-model="beneficiario.barrio">
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="inputDireccion" class="control-label">Dirección :</label>
+
+								<div class="">
+									<div class="bs-component">
+										<input type="text" id="inputDireccion" class="form-control" ng-model="beneficiario.direccion">
+									</div>
+								</div>
+							</div>
+
+
+
+							<div class="form-group">
+								<label class="control-label" for="inputTelefono">Telefono :</label>
+
+								<div class="">
+									<div class="bs-component">
+										<input type="text" id="inputTelefono" class="form-control" ng-model="beneficiario.telefono">
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label" for="inputZona">Zona ID :</label>
+
+								<div class="">
+									<div class="bs-component">
+										<input type="text" id="inputZona" class="form-control" ng-model="beneficiario.zona_id">
+									</div>
+								</div>
+							</div>
+
+
+						<!--<div class="form-group">
+						<label class="control-label" for="textArea2">ID de Zona :</label>
+							<select class="form-control" ng-model="riesgo.tiporiesgo_id">
+								<option ng-repeat="tiporiesgo in tiporiesgos" value="{{tiporiesgo.id}}"
+										ng-selected="riesgo.tiporiesgo_id==tiporiesgo.id">{{tiporiesgo.nombre}}
+								</option>
+							</select>
+						</div>-->
+
+						<div class=" btn-group">
+						
+							<button type="submit" class="btn btn-primary ">{{accion}}</button>
+						
+					</div>
                             <!--
 							<strong><p class="form-control-static text-system">Consejo cumunitario</p></strong>
 							<br>
@@ -54,15 +163,49 @@
 							</div>-->
 						</form>
 					</div>
-					<div class="panel-footer">
-						<button type="submit" class="btn btn-primary">Guardar zona</button>
-					</div>
+					
+
+
+						
+					</form>
 				</div>
 			</div>
 
-
 		</div>
 
+		<!--div class="col-md-6">
+			<div class="panel">
+				<div class="panel-heading">
+					<h3 class="panel-title">Agregar filtros</h3>
+				</div>
+				<div class="panel-body">
+					<form  method="post" ng-submit="guardarFiltro()">
+						<div class="form-group">
+							<select class="form-control" ng-model="filtro.campo">
+								<option ng-repeat="tiporiesgo in tiporiesgos" value="{{tiporiesgo.id}}"
+										ng-selected="riesgo.tiporiesgo_id==tiporiesgo.id">{{tiporiesgo.nombre}}
+								</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<select class="form-control" ng-model="filtro.operador">
+								<option>==</option>
+								<option>>=</option>
+								<option><=</option>
+								<option>!=</option>
+								<option>%like</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" ng-model="filtro.valor">
+						</div>
+						<div class="form-group">
+							<button type="submit" class="btn btn-primary">{{accion}}</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div-->
 
 	</div>
 </div>

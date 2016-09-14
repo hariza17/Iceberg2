@@ -79,6 +79,8 @@
 	<script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 	<script src="/bower_components/angular-click-outside/clickoutside.directive.js"></script>
 	<script src="/bower_components/lodash/dist/lodash.min.js"></script>
+	<script src="/bower_components/angular-confirm-modal/angular-confirm.min.js"></script>
+
 	<script src="/bower_components/amitava82-angular-multiselect/dist/multiselect-tpls.js"></script>
 	<!-- Module registration -->
 	<script src="/js/app/moduleRegistration.js"></script>
