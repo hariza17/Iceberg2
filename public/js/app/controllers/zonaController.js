@@ -29,8 +29,6 @@ controllerModule
     			});
     			
     		};
-
-
     }])
 	.controller('zonaDetalleController', ['$scope', 'zonaService',
     '$stateParams', '$location', 'toastr', '$rootScope',

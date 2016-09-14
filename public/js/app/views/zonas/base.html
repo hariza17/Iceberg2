@@ -1,6 +1,7 @@
 <style>
-	.color {
-		background-color: #e4eaec;
+	
+	.margin{
+margin-bottom: 0.8em;
 	}
 </style>
 
@@ -49,7 +50,7 @@
 						</div>
 
 						<div class="pull-right search">
-							<input class="form-control input-outline" type="text" placeholder="Buscar">
+							<input class="form-control input-outline" type="text" ng-model="buscar" placeholder="Buscar">
 						</div>
 					</div>
 
@@ -58,24 +59,25 @@
 
 
 
-		<div class="col-lg-4 col-md-4 " ng-repeat="zona in zonas" style="height: 190px;">
+		<div class="col-lg-4 col-md-4 margin" ng-repeat="zona in zonas | filter : buscar" style="height: 190px;">
+         
           <div class="widget widget-shadow ">
-
-            <div class="widget-header padding-30 bg-blue-600 white ">
+            <div class="widget-header padding-30 bg-cyan-700 white ">
               <a class="avatar avatar-100 img-bordered bg-white pull-right" href="javascript:void(0)">
-                <img src="http://hombre.starmedia.com/imagenes/2012/12/facebook350.jpg"
+                <img src="/img/avatar.png"
                                  alt="...">
               </a>
               <div class="vertical-align height-100 text-truncate">
                 <div class="vertical-align-middle">
                   <div class="font-size-20 margin-bottom-5 text-truncate">{{zona.nombre}}</div>
                   <div class="font-size-14 text-truncate">{{zona.descripcion}}</div>
-                    
+                   
+
                 </div>
               </div>
             </div>
-            <div class="color">
-            		<a type="button" class="btn btn-sm btn-icon btn-flat btn-default" ui-sref="main.zonas.detalle({zonaId:zona.id})">
+            <div class="bg-blue-grey-700">
+            		<a type="button" class=" btn btn-sm  btn-flat btn-icon btn-default" ui-sref="main.zonas.detalle({zonaId:zona.id})">
 						<i class="icon wb-eye" aria-hidden="true"></i>
 					</a>
 					<a type="button" class="btn btn-sm btn-icon btn-flat btn-default" ui-sref="main.zonas.editar({zonaId:zona.id})">

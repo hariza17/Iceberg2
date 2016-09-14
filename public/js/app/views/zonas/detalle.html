@@ -1,61 +1,124 @@
-<div class="chute chute-center micontent">
+<div>
 	<div class="row">
-		<div class="col-md-4">
-			<div class="row">
-				<div class="col-md-12 panel panel-primary">
-					<img src="assets/img/ic_zona.png" class="ic-zona center-block">
-					<div class="tools-zonas">
-						<h3 class="text-rigth text-center">{{zona.nombre}}</h3>
-						<h5 class="text-rigth text-center text-system text-capitalize">{{zona.usuario.empleado.primer_nombre +' '
-                            +zona.usuario.empleado.segundo_nombre +' '+zona.usuario.empleado.primer_apellido +'  '+zona.usuario.empleado.segundo_apellido}}</h5>
-						<button type="button" class="btn btn-primary btn-block" ui-sref="main.zonas.editar({zonaId:zona.id})">Editar</button>
-						<button type="button" class="btn btn-danger btn-block" ng-click="removeZona(zona.id)">Eliminar</button>
+		<div class="col-md-12">
 
-					</div>
-				</div>
-				<div class="col-md-4">
-
-				</div>
-
-
-
-			</div>
-
-		</div>
-		<div class="col-md-8">
-			<div class="panel panel-primary">
+			<div class="panel">
 				<div class="panel-heading">
-					<span class="panel-title">Descripcion</span>
-				</div>
-				<div class="panel-body ">
-					<p>{{zona.descripcion}}</p>
-				</div>
-			</div>
-
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-					<span class="panel-title">Consejo comunitario</span>
+					<h3 class="panel-title">{{titulo}}</h3>
 				</div>
 				<div class="panel-body">
-					<div class="well blockquote-rounded mv20" ng-repeat="consejo in zona.consejos_comunitario">
-						<address>
-							<strong>Presidente</strong>
-							<br>{{consejo.presidente}}
-							<br>Tel: {{consejo.contacto}}
+
+					<form class="form-horizontal" role="form" ng-submit="saveZona()">
+
+
+							<div class="form-group">
+								<label for="inputStandard" class="col-lg-3 control-label">Nombre</label>
+
+								<div class="col-lg-8">
+									<div class="bs-component">
+										<input type="text" id="inputStandard" class="form-control" ng-model="zona.nombre">
+									</div>
+								</div>
+							</div>
+
+
+
+							<div class="form-group">
+								<label class="col-lg-3 control-label" for="textArea2">Descripcion</label>
+
+								<div class="col-lg-8">
+									<div class="bs-component">
+										<textarea class="form-control" id="textArea2" rows="3" ng-model="zona.descripcion"></textarea>
+										<div id="source-button" class="btn btn-system btn-xs" style="display: none;">&lt; &gt;</div>
+									</div>
+								</div>
+							</div>
+							<!--<strong><p class="form-control-static text-system">Consejo cumunitario</p></strong>
 							<br>
-						</address>
-						<address>
-							<strong>Miembros</strong>
-							<br>{{consejo.participantes}}
 
+							<div class="form-group">
+								<label for="inputStandard" class="col-lg-3 control-label">Presidente</label>
 
-						</address>
-					</div>
+								<div class="col-lg-8">
+									<div class="bs-component">
+										<input type="text" id="inputStandard" class="form-control" ng-model="consejo.presidente">
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="inputStandard" class="col-lg-3 control-label">Contacto</label>
+
+								<div class="col-lg-8">
+									<div class="bs-component">
+										<input type="text" id="inputStandard" class="form-control" ng-model="consejo.contacto">
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="inputStandard" class="col-lg-3 control-label">Periodo</label>
+
+								<div class="col-lg-8">
+									<div class="bs-component">
+										<input type="text" id="inputStandard" class="form-control" ng-model="consejo.periodo">
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-lg-3 control-label" for="textArea1">Miembros </label>
+
+								<div class="col-lg-8">
+									<div class="bs-component">
+										<textarea class="form-control textarea-grow" id="textArea1" rows="4" ng-model="consejo.participantes"></textarea>
+									</div>
+								</div>
+							</div>-->
+							<div class="panel-footer">
+								<button type="submit" class="btn btn-primary">{{boton}}</button>
+							</div>
+						</form>
+										
+					
 				</div>
 			</div>
+
 		</div>
 
+		<!--div class="col-md-6">
+			<div class="panel">
+				<div class="panel-heading">
+					<h3 class="panel-title">Agregar filtros</h3>
+				</div>
+				<div class="panel-body">
+					<form  method="post" ng-submit="guardarFiltro()">
+						<div class="form-group">
+							<select class="form-control" ng-model="filtro.campo">
+								<option ng-repeat="tiporiesgo in tiporiesgos" value="{{tiporiesgo.id}}"
+										ng-selected="riesgo.tiporiesgo_id==tiporiesgo.id">{{tiporiesgo.nombre}}
+								</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<select class="form-control" ng-model="filtro.operador">
+								<option>==</option>
+								<option>>=</option>
+								<option><=</option>
+								<option>!=</option>
+								<option>%like</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" ng-model="filtro.valor">
+						</div>
+						<div class="form-group">
+							<button type="submit" class="btn btn-primary">{{accion}}</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div-->
+
 	</div>
-
-
 </div>
