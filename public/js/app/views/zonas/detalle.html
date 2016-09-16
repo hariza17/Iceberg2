@@ -4,121 +4,76 @@
 
 			<div class="panel">
 				<div class="panel-heading">
-					<h3 class="panel-title">{{titulo}}</h3>
+					
+					<!--<h2 class="panel-title">
+					 {{zona.nombre}}
+					 <hr>
+					</h2>
+					-->
+
+					
+
 				</div>
 				<div class="panel-body">
-
-					<form class="form-horizontal" role="form" ng-submit="saveZona()">
-
-
-							<div class="form-group">
-								<label for="inputStandard" class="col-lg-3 control-label">Nombre</label>
-
-								<div class="col-lg-8">
-									<div class="bs-component">
-										<input type="text" id="inputStandard" class="form-control" ng-model="zona.nombre">
-									</div>
-								</div>
-							</div>
+		
 
 
+<!-- panel SO -->
 
-							<div class="form-group">
-								<label class="col-lg-3 control-label" for="textArea2">Descripcion</label>
 
-								<div class="col-lg-8">
-									<div class="bs-component">
-										<textarea class="form-control" id="textArea2" rows="3" ng-model="zona.descripcion"></textarea>
-										<div id="source-button" class="btn btn-system btn-xs" style="display: none;">&lt; &gt;</div>
-									</div>
-								</div>
-							</div>
-							<!--<strong><p class="form-control-static text-system">Consejo cumunitario</p></strong>
-							<br>
+		<div class="col-lg-9" style=" margin-top: 40px;">
+              <!-- Example Tabs Right -->
+              <div class="example-wrap">
+                <div class="nav-tabs-vertical">
+                <uib-tabset active="">
+                        <uib-tab index="0" heading="Detalle de zona">
+                            <div class="tab-pane padding-vertical-15 animation-fade " role="tabpanel" style="margin-left: 10px;">
+                               	<h2>{{zona.nombre}}</h2>
+                    			 {{zona.descripcion}}
+                            </div>
+                        </uib-tab>
 
-							<div class="form-group">
-								<label for="inputStandard" class="col-lg-3 control-label">Presidente</label>
+                        <uib-tab index="1" heading="Consejo comunitario">
+                            <div class="tab-pane padding-vertical-15 animation-fade " role="tabpanel" style="margin-left: 10px;" >
+                                     	<h2>{{zona.nombre}}</h2>
+                    				 {{zona.descripcion}}
+                            </div>
+                        </uib-tab>
+                    </uib-tabset>
+                </div>
+              </div>
+              <!-- End Example Tabs Right -->
+            </div>
 
-								<div class="col-lg-8">
-									<div class="bs-component">
-										<input type="text" id="inputStandard" class="form-control" ng-model="consejo.presidente">
-									</div>
-								</div>
-							</div>
 
-							<div class="form-group">
-								<label for="inputStandard" class="col-lg-3 control-label">Contacto</label>
+<div class="col-lg-3 col-md-6" style="margin-top: 40px;"" >
+          <div class="widget widget-shadow">
+            <div class="widget-header bg-blue-grey-700 padding-30 white text-center">
+              <a class="avatar avatar-100 img-bordered bg-white" href="javascript:void(0)">
+                <img src="http://hombre.starmedia.com/imagenes/2012/12/facebook350.jpg">
+              </a>
+                
+	                <div class="font-size-20 margin-bottom-15">Robin Ahrens</div>
+	                <p class="margin-bottom-5 text-nowrap"><i class="icon wb-map margin-right-5" aria-hidden="true"></i>
+	                  <span class="text-break">Mountain View,CA 94043, United States</span>
+	                </p>
+	                <p class="margin-bottom-5 text-nowrap"><i class="icon wb-envelope margin-right-5" aria-hidden="true"></i>
+	                  <span class="text-break">amazingSurge@yahoo.com</span>
+	                </p>
+	                <p class="margin-bottom-5 text-nowrap"><i class="icon bd-twitter margin-right-5" aria-hidden="true"></i>
+	                  <span class="text-break">Kolage</span>
+	                </p>
+            </div>
+          </div>
+        </div>
 
-								<div class="col-lg-8">
-									<div class="bs-component">
-										<input type="text" id="inputStandard" class="form-control" ng-model="consejo.contacto">
-									</div>
-								</div>
-							</div>
+<!-- fin panel SO -->
 
-							<div class="form-group">
-								<label for="inputStandard" class="col-lg-3 control-label">Periodo</label>
 
-								<div class="col-lg-8">
-									<div class="bs-component">
-										<input type="text" id="inputStandard" class="form-control" ng-model="consejo.periodo">
-									</div>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label class="col-lg-3 control-label" for="textArea1">Miembros </label>
-
-								<div class="col-lg-8">
-									<div class="bs-component">
-										<textarea class="form-control textarea-grow" id="textArea1" rows="4" ng-model="consejo.participantes"></textarea>
-									</div>
-								</div>
-							</div>-->
-							<div class="panel-footer">
-								<button type="submit" class="btn btn-primary">{{boton}}</button>
-							</div>
-						</form>
-										
 					
 				</div>
 			</div>
 
 		</div>
-
-		<!--div class="col-md-6">
-			<div class="panel">
-				<div class="panel-heading">
-					<h3 class="panel-title">Agregar filtros</h3>
-				</div>
-				<div class="panel-body">
-					<form  method="post" ng-submit="guardarFiltro()">
-						<div class="form-group">
-							<select class="form-control" ng-model="filtro.campo">
-								<option ng-repeat="tiporiesgo in tiporiesgos" value="{{tiporiesgo.id}}"
-										ng-selected="riesgo.tiporiesgo_id==tiporiesgo.id">{{tiporiesgo.nombre}}
-								</option>
-							</select>
-						</div>
-						<div class="form-group">
-							<select class="form-control" ng-model="filtro.operador">
-								<option>==</option>
-								<option>>=</option>
-								<option><=</option>
-								<option>!=</option>
-								<option>%like</option>
-							</select>
-						</div>
-						<div class="form-group">
-							<input type="text" class="form-control" ng-model="filtro.valor">
-						</div>
-						<div class="form-group">
-							<button type="submit" class="btn btn-primary">{{accion}}</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div-->
-
 	</div>
 </div>

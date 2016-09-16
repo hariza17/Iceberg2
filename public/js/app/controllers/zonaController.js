@@ -34,32 +34,19 @@ controllerModule
     '$stateParams', '$location', 'toastr', '$rootScope',
 	function ($scope, zonaService, $stateParams, $location, toastr, $rootScope) {
 			$rootScope.titulo= "detalle zona";
-			
-/*
-			$scope.getZona = function (zonaId) {
-				zonaService.getZonaById(zonaId).then(function (response) {
+
+			$scope.detalleZona = function (zonaId){
+				zonaService.getZonaById(zonaId).then(function successCallBack(response){
 					$scope.zona = response.data;
-
-				}, function (response) {
-					console.log(response);
-					$location.path('/app/zona');
-				});
-			};*/
-/*
-			$scope.getZona(parseInt($stateParams.zonaId));
-			//Metodo para eliminar la Zona
-			$scope.removeZona = function (zonaId) {
-				zonaService.deleteZona(zonaId).then(function (response) {
-					$rootScope.getAllZonas();
-					$location.path('/app/zona');
-					toastr.warning('Exito', 'Zona eliminada');
-
-				}, function (response) {
-					console.log(response);
+				}, function errorCallBack (response){
 					$location.path('/app/zona');
 				});
 			};
-			*/
+
+			$scope.detalleZona(parseInt($stateParams.zonaId));
+
+			
+
 	}])
 	.controller('zonaCrearController', ['$scope', 'zonaService', '$stateParams', '$location', 'toastr', '$rootScope',
 		function ($scope, zonaService, $stateParams, $location, toastr, $rootScope) {
