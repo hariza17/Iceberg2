@@ -56,7 +56,6 @@ class BeneficiarioController extends Controller
     {
         Beneficiario::create($request->all());
 		return response()->json(["mensaje"=>"Creado correctamente"]);
-
     }
 
     /**

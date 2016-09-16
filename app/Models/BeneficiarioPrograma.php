@@ -7,8 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class BeneficiarioPrograma extends Model
 {
     protected $table='beneficiarios_programas';
+
+    //$table->increments('');
+
+
 	protected $fillable=['beneficiarios_id','programas_id','periodo_id'];
+	
 	public $timestamps = false;
+
+
 	
 	public function benficiario()
     {
