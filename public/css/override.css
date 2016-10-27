@@ -206,3 +206,7 @@ input.cmn-toggle-round:checked + label:after {
 	top: 0;
 	display: block;
 }
+
+.modal{
+	z-index: 100000 !important;
+}

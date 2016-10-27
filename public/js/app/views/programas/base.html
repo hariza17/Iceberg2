@@ -1,83 +1,117 @@
-<div class="row">
-	<div class="col-md-12">
-		<header id="topbar" class="alt">
-			<div class="topbar-left">
-				<ol class="breadcrumb">
-					<li class="text-system">
-						<a ui-sref="main.programas">
-							<span class="fa fa-puzzle-piece"></span>
-						</a>
-					</li>
-					<li class="breadcrumb-active">
-						<a class="text-system">Programas</a>
-					</li>
+<style>
+	
+	.margin{
+margin-bottom: 0.8em;
+	}
+</style>
 
-				</ol>
-			</div>
-			<div class="topbar-right">
 
-				<div class="btn-group">
-					<a  class="btn btn-primary" ui-sref="main.programas.crear">
-						<i class="fa fa-plus"></i>
-					</a>
 
-				</div>
 
-			</div>
-		</header>
+
+
+
+
+
+
+<div class="page-header">
+
+	<h1 class="page-title">Programas</h1>
+	<ol class="breadcrumb">
+		<li><a ui-sref="main">Inicio</a></li>
+		<li><a ui-sref="main.programas" ng-click="barra()">Programas</a></li>
+		<li ng-hide="titulo == 'NO'">{{titulo}}</li>
+	</ol>
+	<div class="page-header-actions">
+	<a ui-sref="main.programas.crear" class="btn btn-sm btn-icon btn-inverse btn-round" data-toggle="tooltip" data-original-title="Edit">
+			<i class="icon wb-plus" aria-hidden="true"></i>
+		</a>
+		<!--
+			<button type="button" class="btn btn-sm btn-icon btn-inverse btn-round" data-toggle="tooltip" data-original-title="Refresh">
+				<i class="icon wb-refresh" aria-hidden="true"></i>
+			</button>
+			<button type="button" class="btn btn-sm btn-icon btn-inverse btn-round" data-toggle="tooltip" data-original-title="Setting">
+				<i class="icon wb-settings" aria-hidden="true"></i>
+			</button>-->
 	</div>
 </div>
+
+<div class="page-content" ui-view>
+	<div class="panel">
+		<div class="panel-heading">
+			<h3 class="panel-title"></h3>
+		</div>
+		<div class="panel-body container-fluid">
+
+			<div class=" col-md-12 fixed-table-toolbar">
+						<div class="bars pull-left">
+							<div class="btn-group hidden-xs" id="exampleToolbar" role="group">
+								<a ui-sref="main.programas.crear" class="btn btn-outline btn-default">
+									<i class="icon wb-plus" aria-hidden="true"></i>
+								</a>
+								<button type="button" class="btn btn-outline btn-default">
+									<i class="icon wb-download" aria-hidden="true"></i>
+								</button>
+								<button type="button" class="btn btn-outline btn-default">
+									<i class="icon wb-trash" aria-hidden="true"></i>
+								</button>
+							</div>
+						</div>
+
+						<div class="pull-right search">
+							<input class="form-control input-outline" type="text" ng-model="buscar" placeholder="Buscar">
+						</div>
+					</div>
+
+<br>
 <br>
 
 
-<div ui-view>
 
-	<div class="chute chute-center" style="height: 830px;">
+	<div class="col-lg-4 col-md-4 margin" ng-repeat="programa in programas | filter : buscar" style="height: 190px;">
+   
+          <div class="widget widget-shadow ">
+            <div class="widget-header padding-30">
+              <a class="avatar avatar-100 img-bordered bg-white pull-right" href="javascript:void(0)">
+                <img src="/img/avatar.png"
+                                 alt="...">
+              </a>
+              <div class="vertical-align height-100 text-truncate">
+                <div class="vertical-align-middle">
+                  <div class="font-size-20 margin-bottom-5 text-truncate">{{programa.nombre}}</div>
+                  <div class="font-size-14 text-truncate">{{programa.descripcion}}</div>
+                   
 
-		<!-- -------------- Basic FooTable -------------- -->
-		<div class="panel" id="spy1">
-			<div class="panel-heading">
-				<span class="panel-title">Lista de programas</span>
+                </div>
+              </div>
+            </div>
+            <div class="bg-blue-grey-700">
+            		<a type="button" class=" btn btn-sm  btn-flat btn-icon btn-default" ui-sref="main.programas.detalle({programaId:programa.id})">
+						<i class="icon wb-eye" aria-hidden="true"></i>
+					</a>
+					<a type="button" class="btn btn-sm btn-icon btn-flat btn-default" ui-sref="main.programas.editar({programaId:programa.id})">
+						<i class="icon wb-pencil" aria-hidden="true"></i>
+					</a>
+					<a type="button" class="btn btn-sm btn-icon btn-flat btn-default" ng-click="remove(programa.id)">
+						<i class="icon wb-trash" aria-hidden="true"></i>
+					</a>
+
 			</div>
-			<div class="panel-body pn">
-				<div class="table-responsive">
-					<table class="table footable no-paging footable-loaded">
-						<thead>
-							<tr>
-								<th class="footable-sortable">Nombre<span class="footable-sort-indicator"></span></th>
-								<th class="footable-sortable footable-sorted-desc">Descripcion<span class="footable-sort-indicator"></span></th>
-								<th class="footable-sortable">Acción<span class="footable-sort-indicator"></span></th>
-							</tr>
-						</thead>
-						<tbody>
-
-
-
-
-
-
-							<tr class="footable-even" style="display: table-row;" ng-repeat="programa in programas">
-								<td><span class="footable-toggle"></span>{{programa.nombre}}</td>
-								<td>{{programa.descripcion}}</td>
-                                                                <td>
-									<div class="btn-group">
-										<a type="button" class="btn btn-primary light" ui-sref="main.programas.detalle({programaId:programa.id})">
-											<i class="fa fa-share-square-o"></i>
-										</a>
-										<a type="button" class="btn btn-danger light">
-											<i class="fa fa-trash"></i>
-										</a>
-									</div>
-								</td>
-
-							</tr>
-
-						</tbody>
-					</table>
-				</div>
-			</div>
+          </div>
+        </div>
 		</div>
-
-
 	</div>
+
 </div>
+
+<script type="text/ng-template" id="windows.html">
+
+    <div modal-render="{{$isRendered}}" tabindex="-1" role="dialog" class="modal modal-success"
+         uib-modal-animation-class="fade" modal-in-class="in" ng-style="{'z-index': 1750 + index*10, display: 'block'}">
+        <div class="modal-dialog {{size ? 'modal-' + size : ''}}  animation-fade">
+            <div class="modal-content" uib-modal-transclude></div>
+        </div>
+    </div>
+
+
+</script>

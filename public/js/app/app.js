@@ -71,8 +71,7 @@ icebergApp.config(['$stateProvider', '$urlRouterProvider', 'toastrConfig','$loca
                     templateUrl: '/js/app/views/zonas/crear.html',
                     controller: 'zonaEditarController'
                 })
-
-
+            
                 //BENEFICIARIO ROUTES
                 .state('main.beneficiarios', {
                     url: '/beneficiario',
@@ -122,13 +121,18 @@ icebergApp.config(['$stateProvider', '$urlRouterProvider', 'toastrConfig','$loca
                 })
                 .state('main.programas.detalle', {
                     url: '/detalle/:programaId',
-                    templateUrl: '/js/app/views/programas/crear.html',
-                    controller: 'programaEditarController'
+                    templateUrl: '/js/app/views/programas/detalle.html',
+                    controller: 'programaDetalleController'
                 })
                 .state('main.programas.crear', {
                     url: '/crear',
                     templateUrl: '/js/app/views/programas/crear.html',
                     controller: 'programaCrearController'
+                })  
+                .state('main.programas.editar', {
+                    url: '/crear/:programaId',
+                    templateUrl: '/js/app/views/programas/crear.html',
+                    controller: 'programaEditarController'
                 })
 
                 //OBJETIVOS ROUTES
@@ -182,4 +186,27 @@ icebergApp.config(['$stateProvider', '$urlRouterProvider', 'toastrConfig','$loca
                     controller: 'actividadCrearController'
                 })
 
-}])
+}]);
+
+icebergApp.run(['$confirmModalDefaults',  '$rootScope',
+    function ($confirmModalDefaults, $rootScope) {
+       /* var token = window.localStorage.getItem(TOKEN_KEY);
+        if (token && !jwtHelper.isTokenExpired(token)) {
+
+            loginService.getaAuthUser().then(function (response) {
+                $rootScope.usuario = response.data;
+                var permissions = $rootScope.usuario.permissions;
+                console.log($rootScope.usuario);
+                PermissionStore.defineManyPermissions(permissions, function (permissionName) {
+                    return _.include(permissions, permissionName);
+                });
+                var rol = $rootScope.usuario.rol;
+                RoleStore.defineRole(rol, permissions);
+            });
+        }
+        */
+    $confirmModalDefaults.templateUrl = 'alertas.html';
+    $confirmModalDefaults.defaultLabels.title = 'Mensaje del sistema';
+    $confirmModalDefaults.defaultLabels.ok = 'Si';
+    $confirmModalDefaults.defaultLabels.cancel = 'No';
+}]);

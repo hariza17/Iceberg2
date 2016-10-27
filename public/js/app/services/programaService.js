@@ -18,8 +18,8 @@ servicesModule.factory('programaService', ['$http', function ($http) {
         createPrograma: function (programa) {
             return $http.post(this.apiUrl + 'programa/', programa);
         },
-        updatePrograma: function (programa) {
-            return $http.put(this.apiUrl + 'programa/', programa);
+        updatePrograma: function (id, programa) {
+            return $http.put(this.apiUrl + 'programa/'+ id , programa);
         },
         deletePrograma: function (programaId) {
             return $http.delete(this.apiUrl + 'programa/' + programaId);

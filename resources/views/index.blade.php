@@ -111,6 +111,18 @@
 
 	<script src="/js/app/app.js"></script>
 
+	<!-- Modal Black Box -->
+
+	<script type="text/ng-template" id="uib/template/modal/backdrop.html">
+		<div class="modal-backdrop fade in">
+		</div>
+	</script>
+
+	<!--  -->
+
+
+
+
 </body>
 
 </html>

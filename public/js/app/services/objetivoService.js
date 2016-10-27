@@ -18,7 +18,7 @@ servicesModule.factory('objetivoService', ['$http', function ($http) {
         createObjetivo: function (objetivo) {
             return $http.post(this.apiUrl + 'objetivo/', objetivo);
         },
-        updateObjetivo: function (objetivo) {
+        updateObjetivo: function (  id, objetivo) {
             return $http.put(this.apiUrl + 'objetivo/', objetivo);
         },
         deleteObjetivo: function (objetivoId) {
