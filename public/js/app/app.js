@@ -13,7 +13,8 @@ var icebergApp = angular.module("icebergApp", [
     'angular-confirm',
 	'ui.bootstrap',
 	'angular-click-outside',
-	'am.multiselect'
+	'am.multiselect',
+    'ui.calendar'
 ]);
 
 icebergApp.filter('capitalize', function () {
@@ -173,7 +174,7 @@ icebergApp.config(['$stateProvider', '$urlRouterProvider', 'toastrConfig','$loca
                 .state('main.actividades', {
                     url: '/actividad',
                     templateUrl: '/js/app/views/actividades/base.html',
-                    controller: 'actividadController'
+                    controller: 'actividadController' 
                 })
                 .state('main.actividades.detalle', {
                     url: '/detalle/:actividadId',

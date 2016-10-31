@@ -9,16 +9,61 @@ var controllerModule = angular.module('AppControllers');
 
 controllerModule
         .controller('actividadController', ['$scope', 'actividadService',
-            '$stateParams', '$rootScope',
-            function ($scope, actividadService, $stateParams, $rootScope) {
-                $rootScope.actividades = [];
-                $rootScope.getAllActividades = function () {
-                    actividadService.getAllActividad().then(function (response) {
-                        $rootScope.actividades = response.data;
-                    });
-                };
+            '$stateParams', '$rootScope', 'uiCalendarConfig',
+            function ($scope, actividadService, $stateParams, $rootScope, uiCalendarConfig) {
+                 var date = new Date();
+                    var d = date.getDate();
+                    var m = date.getMonth();
+                    var y = date.getFullYear();
 
-                $rootScope.getAllActividades();
+                $scope.events = [
+                      {id: 1 , title: 'Actividad en Bayunca',start: new Date(y, m, 1)},
+                      {id: 2, title: 'Todo el día',start: new Date(y, m, d - 5),end: new Date(y, m, d - 2)},
+                      {id: 999,title: 'evento 1',start: new Date(y, m, d - 3, 16, 0),allDay: false},
+                      {id: 999,title: 'evento 1',start: new Date(y, m, d + 4, 16, 0),allDay: false},
+                      {id: 3, title: 'Cumpleaños',start: new Date(y, m, d + 1, 19, 0),end: new Date(y, m, d + 1, 22, 30),allDay: false},
+                      {id: 4, title: 'prueba',start: new Date(y, m, 28),end: new Date(y, m, 29)}
+                    ];
+/*
+            $scope.alertOnEventClick = function( date, jsEvent, view){
+                $scope.alertMessage = (date.title + ' was clicked ');
+            };*/
+//configuración de calendario
+             $scope.uiConfig = {
+                calendar: {
+                    height: 450,
+                    editable: true,
+                    displayEventTime: false,
+                        header: {
+                            left: 'month basicWeek basicDay agendaWeek agendaDay',
+                            center: 'title',
+                            right: 'today prev, next'
+                        }, 
+                    eventClick: function (event){
+                        $scope.SelectedEvent = event;
+                        alert($scope.SelectedEvent.title+ "   " +  $scope.SelectedEvent.id);
+                    }
+                }
+            };
+
+         $scope.eventSources = [$scope.events, $scope.eventSource];
+
+            /*Modal modal
+
+             $scope.open = function (size) {
+                      var modalInstance = $uibModal.open({
+                          animation: $scope.animationsEnabled,
+                          templateUrl: 'add-alumno.html',
+                          controller: 'actividadController',
+                          size: size
+                        });
+             };
+
+
+               $scope.cancel = function () {
+                $uibModalInstance.dismiss('cancel');
+              };
+          */
 
 
             }])
@@ -69,8 +114,14 @@ controllerModule
                         toastr.success('Exito', 'Actividad actualizado');
                         $location.path('/app/actividad');
 
-
                     });
                 };
 
-            }])
+            }]).
+        controller('ModalController', ['$scope','$uiCalendarConfig' ,'$uibModal', '$uibModalInstance' , 
+            function($scope, $uiCalendarConfig , $uibModal, $uibModalInstance){
+
+
+
+        }])
+      

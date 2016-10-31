@@ -10,7 +10,10 @@ servicesModule.factory('actividadService', ['$http', function ($http) {
     return {
         apiUrl: apiUrl,
         getAllActividad: function () {
-            return $http.get(this.apiUrl + 'actividad/');
+            return $http.get(this.apiUrl + 'actividad' , {
+                    cache: true,
+                    params : {}
+            });
         },
         getActividadById: function (actividadId) {
             return $http.get(this.apiUrl + 'actividad/' + actividadId);
@@ -18,8 +21,8 @@ servicesModule.factory('actividadService', ['$http', function ($http) {
         createActividad: function (actividad) {
             return $http.post(this.apiUrl + 'actividad/', actividad);
         },
-        updateActividad: function (actividad) {
-            return $http.put(this.apiUrl + 'actividad/', actividad);
+        updateActividad: function (actividadId , actividad) {
+            return $http.put(this.apiUrl + 'actividad/'+ actividadId, actividad);
         },
         deleteActividad: function (actividadId) {
             return $http.delete(this.apiUrl + 'actividad/' + actividadId);
