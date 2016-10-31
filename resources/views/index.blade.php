@@ -28,23 +28,29 @@
 	<link rel="stylesheet" href="/vendor/jvectormap/jquery-jvectormap.css">
 	<link rel="stylesheet" href="/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css">
 	<link rel="stylesheet" href="/css/v1.css">
+	<link rel="stylesheet" href="/css/angular-toastr.css">
+
+	<link rel="stylesheet" href="/css/fullcalendar.min.css">
+	<link rel="stylesheet" href="/css/calendar.min.css">
+
+	<link rel="stylesheet" href="/bower_components/fullcalendar/dist/fullcalendar.css">
 	<link rel="stylesheet" href="/css/profile.min.css">
 	<link rel="stylesheet" href="/css/team.min.css">
 	<link rel="stylesheet" href="/css/select2.min.css">
-	<link rel="stylesheet" href="/css/override.css">
+	
 	<!--TOAST CSS-->
-	<link rel="stylesheet" href="/css/angular-toastr.css">
+	
 	<!-- Fonts -->
 	<link rel="stylesheet" href="/fonts/weather-icons/weather-icons.css">
 	<link rel="stylesheet" href="/fonts/web-icons/web-icons.min.css">
 	<link rel="stylesheet" href="/fonts/brand-icons/brand-icons.min.css">
 	<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
-
+	<link rel="stylesheet" href="/css/override.css">
 	<link rel="icon" href="/img/logo.png">
 
 	<!-- calendar -->
 
-	<link rel="stylesheet" href="/bower_components/fullcalendar/dist/fullcalendar.css">
+	
 
 	<!--[if lt IE 9]>
     <script src="/html5shiv/html5shiv.min.js"></script>

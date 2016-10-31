@@ -10,6 +10,14 @@
     <a class="btn btn-sm btn-icon btn-inverse btn-round" data-toggle="tooltip" data-original-title="Edit" ng-click="open('lg')">
             <i class="icon wb-plus" aria-hidden="true"></i>
         </a>
+
+        <div class="col-md-12" ng-show="SelectedEvent" >
+                    
+        <h4> {{SelectedEvent.title}}</h4>
+         <h4> {{SelectedEvent.id}}</h4>
+
+                </div>
+
         <!--
             <button type="button" class="btn btn-sm btn-icon btn-inverse btn-round" data-toggle="tooltip" data-original-title="Refresh">
                 <i class="icon wb-refresh" aria-hidden="true"></i>
@@ -26,13 +34,9 @@
         </div>
         <div class="panel-body container-fluid">
             <div class="example" ui-calendar="uiConfig.calendar" ng-model="eventSources">>
-
                <!-- calendar-->
-              
-               
+                
                <!--fin calendaar -->
-
-
                 <div class="clearfix"></div>
             </div>
         </div>

@@ -80,6 +80,16 @@ controllerModule
         .controller('programaDetalleController', ['$scope' , 'programaService', 
             '$stateParams', '$location', '$rootScope' , function ($scope, programaService , $stateParams, $location, $rootScope){
                 $rootScope.titulo = "Detalle programa";
+
+                $scope.detallePrograma = function (programaId){
+                    programaService.getProgramaById(programaId).then (function successCallBack(response){
+                        $scope.programa = response.data;
+                    }, function errorCallBack(response2){
+                        console.log(response);
+                        $location.path('/app/programa')
+                    });
+                };
+        $scope.detallePrograma(parseInt($stateParams.programaId));
 /*
                     $scope.detalleBeneficiario = function (beneficiarioId){
                 beneficiarioService.getBeneficiarioById(beneficiarioId).then (function successCallBack(response){

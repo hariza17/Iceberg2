@@ -11,6 +11,7 @@ controllerModule
         .controller('actividadController', ['$scope', 'actividadService',
             '$stateParams', '$rootScope', 'uiCalendarConfig',
             function ($scope, actividadService, $stateParams, $rootScope, uiCalendarConfig) {
+                 $scope.SelectedEvent = null;
                  var date = new Date();
                     var d = date.getDate();
                     var m = date.getMonth();
@@ -31,17 +32,18 @@ controllerModule
 //configuración de calendario
              $scope.uiConfig = {
                 calendar: {
-                    height: 450,
+                    height: 550,
                     editable: true,
                     displayEventTime: false,
                         header: {
-                            left: 'month basicWeek basicDay agendaWeek agendaDay',
-                            center: 'title',
-                            right: 'today prev, next'
+                            left: 'today',
+                            center: ' prev, title, next',
+                            right: 'month  agendaWeek agendaDay'
                         }, 
                     eventClick: function (event){
                         $scope.SelectedEvent = event;
-                        alert($scope.SelectedEvent.title+ "   " +  $scope.SelectedEvent.id);
+                        
+                        //alert($scope.SelectedEvent.title+ "   " +  $scope.SelectedEvent.id);
                     }
                 }
             };

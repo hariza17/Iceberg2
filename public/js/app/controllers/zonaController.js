@@ -82,9 +82,3 @@ controllerModule
 							});
 						};
 	}])
-	.controller ('ConsejoComunitario' , ['$scope', '$stateParams', '$location' , '$toastr', '$rootScope', 
-		function ($scope, $rootScope, $location, $stateParams ,$toastr){
-			//Crear servicios, crear, editar, eliminar, ver por id (Fundamental)
-			//
-
-	}])
