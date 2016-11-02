@@ -114,15 +114,22 @@
 									</div>
 								</div>
 							</div>
-							<div class="form-group">
-								<label class="control-label" for="inputZona">Zona ID :</label>
 
-								<div class="">
-									<div class="bs-component">
-										<input type="text" id="inputZona" class="form-control" required ng-model="beneficiario.zona_id">
-									</div>
-								</div>
-							</div>
+                               <div class="form-group">
+                                <label class="control-label" for="textArea2">Zona ID :</label>
+
+                                <div class=>
+                                    <div class="bs-component">
+                                         <select class="form-control" ng-model="beneficiario.zona_id">
+                                            <option value="">--Elige una zona--</option>
+                                             <option ng-repeat="zona in zonas" value="{{zona.id}}" ng-selected="beneficiario.zona_id==zona.id">{{zona.nombre}}</option>
+                                    </select>
+                                        <div id="source-button" class="btn btn-system btn-xs" style="display: none;">&lt; &gt;</div>
+                                    </div>
+                                </div>
+                            </div>
+
+
 
 
 						<!--<div class="form-group">

@@ -1,0 +1,63 @@
+<style>
+	
+	.margin{
+margin-bottom: 0.8em;
+	}
+</style>
+
+
+
+
+
+
+
+
+
+
+<div class="page-header">
+
+	<h1 class="page-title">Programaciones</h1>
+	<ol class="breadcrumb">
+		<li><a ui-sref="main">Inicio</a></li>
+		<li><a ui-sref="main.programacion" ng-click="barra()">Programaciones</a></li>
+		<li ng-hide="titulo == 'NO'">{{titulo}}</li>
+	</ol>
+	<div class="page-header-actions">
+	<a ui-sref="main.programacion.crear" class="btn btn-sm btn-icon btn-inverse btn-round" data-toggle="tooltip" data-original-title="Edit">
+			<i class="icon wb-plus" aria-hidden="true"></i>
+		</a>
+		<!--
+			<button type="button" class="btn btn-sm btn-icon btn-inverse btn-round" data-toggle="tooltip" data-original-title="Refresh">
+				<i class="icon wb-refresh" aria-hidden="true"></i>
+			</button>
+			<button type="button" class="btn btn-sm btn-icon btn-inverse btn-round" data-toggle="tooltip" data-original-title="Setting">
+				<i class="icon wb-settings" aria-hidden="true"></i>
+			</button>-->
+	</div>
+</div>
+
+<div class="page-content" ui-view>
+	<div class="panel">
+		<div class="panel-heading">
+			<h3 class="panel-title"></h3>
+		</div>
+		<div class="panel-body container-fluid">
+		<div id="calendar" ui-calendar="uiConfig.calendar" ng-model="eventSources">
+			
+		</div>
+		</div>
+	</div>
+
+</div>
+
+<script type="text/ng-template" id="windows.html">
+
+    <div modal-render="{{$isRendered}}" tabindex="-1" role="dialog" class="modal modal-success"
+         uib-modal-animation-class="fade" modal-in-class="in" ng-style="{'z-index': 1750 + index*10, display: 'block'}">
+        <div class="modal-dialog {{size ? 'modal-' + size : ''}}  animation-fade">
+            <div class="modal-content" uib-modal-transclude></div>
+        </div>
+    </div>
+
+
+</script>

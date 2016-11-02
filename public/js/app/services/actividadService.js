@@ -10,10 +10,7 @@ servicesModule.factory('actividadService', ['$http', function ($http) {
     return {
         apiUrl: apiUrl,
         getAllActividad: function () {
-            return $http.get(this.apiUrl + 'actividad' , {
-                    cache: true,
-                    params : {}
-            });
+            return $http.get(this.apiUrl + 'actividad');
         },
         getActividadById: function (actividadId) {
             return $http.get(this.apiUrl + 'actividad/' + actividadId);

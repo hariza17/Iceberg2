@@ -131,7 +131,7 @@ icebergApp.config(['$stateProvider', '$urlRouterProvider', 'toastrConfig','$loca
                     controller: 'programaCrearController'
                 })  
                 .state('main.programas.editar', {
-                    url: '/crear/:programaId',
+                    url: '/editar/:programaId',
                     templateUrl: '/js/app/views/programas/crear.html',
                     controller: 'programaEditarController'
                 })
@@ -178,13 +178,41 @@ icebergApp.config(['$stateProvider', '$urlRouterProvider', 'toastrConfig','$loca
                 })
                 .state('main.actividades.detalle', {
                     url: '/detalle/:actividadId',
-                    templateUrl: '/js/app/views/actividades/crear.html',
-                    controller: 'actividadEditarController'
+                    templateUrl: '/js/app/views/actividades/detalle.html',
+                    controller: 'actividadDetalleController'
                 })
                 .state('main.actividades.crear', {
                     url: '/crear',
                     templateUrl: '/js/app/views/actividades/crear.html',
                     controller: 'actividadCrearController'
+                }).
+                state('main.actividades.editar', {
+                    url: '/editar/:actividadId',
+                    templateUrl: '/js/app/views/actividades/crear.html',
+                    controller: 'actividadEditarController'
+
+                })
+
+                //PROGRAMACIONES ROUTES
+                .state('main.programacion' , {
+                    url: '/programacion',
+                    templateUrl: '/js/app/views/programacion/base.html',
+                    controller: 'programacionController' 
+                })
+                .state('main.programacion.crear', {
+                     url: '/crear',
+                    templateUrl: '/js/app/views/programacion/crear.html',
+                    controller: 'programacionCrearController'
+                })
+                .state('main.programacion.detalle',{
+                      url: '/detalle/:programacionId',
+                    templateUrl: '/js/app/views/programacion/detalle.html',
+                    controller: 'programacionDetalleController'
+                })
+                 .state('main.programacion.editar', {
+                    url: '/editar/:programacionId',
+                    templateUrl: '/js/app/views/programacion/crear.html',
+                    controller: 'programacionEditarController'
                 })
 
 }]);

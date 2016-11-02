@@ -120,6 +120,7 @@
 	<script src="/js/app/services/objetivoService.js"></script>
 	<script src="/js/app/services/indicadorService.js"></script>
 	<script src="/js/app/services/actividadService.js"></script>
+	<script src="/js/app/services/programacionService.js"></script>
 
 	<script src="/js/app/controllers/mainController.js"></script>
 	<script src="/js/app/controllers/loginController.js"></script>
@@ -130,6 +131,7 @@
 	<script src="/js/app/controllers/objetivoController.js"></script>
 	<script src="/js/app/controllers/actividadController.js"></script>
 	<script src="/js/app/controllers/indicadorController.js"></script>
+	<script src="/js/app/controllers/programacionController.js"></script>
 	<script src="/js/app/app.js"></script>
 
 	<!-- Module App -->

@@ -13,13 +13,14 @@ controllerModule
     			});
     		};
 
-
-    		$rootScope.getAllBeneficiario();
+    		$rootScope.getAllBeneficiario();  	
 
     		$scope.barra = function () {
 			$rootScope.titulo = "NO";	
 				console.log("titulo");
 			};
+
+				
 			
     		$scope.remove = function (id){
     			$confirm({text:'¿Seguro que desea eliminar?'}).then(function(){
@@ -57,10 +58,20 @@ controllerModule
 		};
 
 	}])
-	.controller('beneficiarioCrearController', ['$scope', 'beneficiarioService','$stateParams', '$location', 'toastr', '$rootScope',
-		function ($scope, beneficiarioService, $stateParams, $location, toastr, $rootScope) {
+	.controller('beneficiarioCrearController', ['$scope', 'beneficiarioService','$stateParams', '$location', 'toastr', '$rootScope' , 'zonaService',
+		function ($scope, beneficiarioService, $stateParams, $location, toastr, $rootScope, zonaService) {
 			$rootScope.titulo = "Crear beneficiario";
 			$scope.accion = "Guardar";
+
+			$scope.zonas = [];
+			$scope.getAllZonas = function () {
+				zonaService.getAllZona().then(function (response) {
+					$scope.zonas = response.data;
+				});
+			};
+			$scope.getAllZonas();
+
+			
 			$scope.guardar = function (){
 				beneficiarioService.createBeneficiario($scope.beneficiario).then(function(){
 					$rootScope.getAllBeneficiario();
@@ -69,6 +80,8 @@ controllerModule
 				});
 
 			};
+
+
 
 	}])
 	
