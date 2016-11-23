@@ -2,32 +2,46 @@ var controllerModule = angular.module('AppControllers');
 
 controllerModule
 	.controller('programacionController', ['$scope', 'programacionService',
-    '$stateParams', '$rootScope','$confirm', 'toastr','uiCalendarConfig',
-    function ($scope, programacionService, $stateParams, $rootScope, $confirm, toastr, uiCalendarConfig) {
+    '$stateParams', '$rootScope','$confirm', 'toastr','uiCalendarConfig', '$uibModal',
+    function ($scope, programacionService, $stateParams, $rootScope, $confirm, toastr, uiCalendarConfig, $uibModal) {
+				
 				$scope.barra = function () {
 				$rootScope.titulo = "NO";	
 					console.log("titulo");
 				};
-		//inicio calendario
-				 $scope.SelectedEvent = null;
-                 var date = new Date();
-                    var d = date.getDate();
-                    var m = date.getMonth();
-                    var y = date.getFullYear();
+ 					$rootScope.SelectedEvent = null;
+					$rootScope.events = [];
+				
+			$rootScope.getAllProgramaciones = function (){
+    			programacionService.getAllProgramacion().then(function successCallBack(response){
+    				//$scope.events.slice(0, events.length);
+    				console.log(response.data);
+    				angular.forEach(response.data, function(value){
 
-                $scope.events = [
-                      {id: 1 , title: 'Actividad en Bayunca',start: new Date(y, m, 1)},
-                      {id: 2, title: 'Todo el día',start: new Date(y, m, d - 5),end: new Date(y, m, d - 2)},
-                      {id: 999,title: 'evento 1',start: new Date(y, m, d - 3, 16, 0),allDay: false},
-                      {id: 999,title: 'evento 1',start: new Date(y, m, d + 4, 16, 0),allDay: false},
-                      {id: 3, title: 'Cumpleaños',start: new Date(y, m, d + 1, 19, 0),end: new Date(y, m, d + 1, 22, 30),allDay: false},
-                      {id: 4, title: 'prueba',start: new Date(y, m, 28),end: new Date(y, m, 29)}
-                    ];
-/*
-            $scope.alertOnEventClick = function( date, jsEvent, view){
-                $scope.alertMessage = (date.title + ' was clicked ');
-            };*/
-//configuración de calendario
+    					$rootScope.events.push({
+    						title: value.actividad_id,
+    						descripcion: value.observaciones,
+    						start: value.fecha_inicio, // new date(parseIt(value.fecha_inicio.substr(6)))
+    						end: value.fecha_fin,// new date(parseIt(value.fecha_fin.substr(6)))
+    						zona: value.zona_id
+    					});
+    				});
+
+    			});
+    		};
+
+				$rootScope.getAllProgramaciones(); 
+
+			  $scope.open = function (event) {
+       			$rootScope.SelectedEvent = event;
+       			//console.log($scope.SelectedEvent.title);
+       			 var modalInstance = $uibModal.open({
+	            animation: $scope.animationsEnabled,
+	            templateUrl: 'add-programacion.html',
+	            controller: 'programacionCrearController'
+	       		 });
+   			 };
+
              $scope.uiConfig = {
                 calendar: {
                     height: 550,
@@ -39,74 +53,63 @@ controllerModule
                             right: 'month  agendaWeek agendaDay'
                         }, 
                     eventClick: function (event){
-                        $scope.SelectedEvent = event;
+                    	$scope.open(event);
                         
-                        //alert($scope.SelectedEvent.title+ "   " +  $scope.SelectedEvent.id);
                     }
                 }
             };
 
-         $scope.eventSources = [$scope.events, $scope.eventSource];
+         $scope.eventSources = [$rootScope.events, $scope.eventSource];
 
-         //fin calendario
-
-
-			/*$rootScope.zonas = [];
-			$rootScope.getAllZonas = function () {
-				zonaService.getAllZona().then(function (response) {
-					$rootScope.zonas = response.data;
-				});
-			};
-					
-					$rootScope.getAllZonas();
-
-			
-				$scope.remove = function (id){
-	    			$confirm({text:'¿Seguro que desea eliminar?'}).then(function(){
-	    				zonaService.deleteZona(id).then(function(response){
-	    							toastr.warning('Éxito', 'Zona eliminada');
-	    							$rootScope.getAllZonas();
-	        				}, function(error){
-	    							toastr.error('Error', 'Está intentando eliminar un registro con datos dependientes');
-	        					});
-	    			});
-	    		};*/
     }])
 	.controller('programacionDetalleController', ['$scope', 'programacionService',
     '$stateParams', '$location', 'toastr', '$rootScope',
 	function ($scope, programacionService, $stateParams, $location, toastr, $rootScope) {
 			$rootScope.titulo= "detalle zona";
 
-			/*$scope.detalleZona = function (zonaId){
-				zonaService.getZonaById(zonaId).then(function successCallBack(response){
-					$scope.zona = response.data;
-				}, function errorCallBack (response){
-					$location.path('/app/zona');
-				});
-			};
-
-			$scope.detalleZona(parseInt($stateParams.zonaId));*/
-
 	}])
-	.controller('programacionCrearController', ['$scope', 'programacionService', '$stateParams', '$location', 'toastr','$rootScope',
-		function ($scope, programacionService, $stateParams, $location, toastr, $rootScope) {
+	.controller("programacionCrearController", ['$scope', 'programacionService', '$stateParams', '$location', 'toastr','$rootScope', '$uibModal','$uibModalInstance', 'zonaService', 'actividadService',
+		function ($scope, programacionService, $stateParams, $location, toastr, $rootScope, $uibModal, $uibModalInstance, zonaService, actividadService) {
 			//funciona
 			$rootScope.titulo = "Crear nueva zona";
-			
+			//console.log($rootScope.SelectedEvent.end);
 			$scope.boton = "Guardar";
-			$scope.programas = [];
-		
-			/*
-				$sc
+			//$scope.progracion = [];
 
-				$scope.getAllRiesgos();ope.saveZona = function () {
-					zonaService.createZona($scope.zona).then(function () {
-						$rootScope.getAllZonas();
-						$scope.zona = {};
-						toastr.success('Exito', 'Zona creada');
+			$scope.zonas = [];
+			$scope.actividades= [];
+
+			$scope.getAllZonas = function (){
+				zonaService.getAllZona().then(function successCallBack(response){
+					$scope.zonas = response.data;
+				});	
+			};
+			$scope.getAllZonas();
+
+			$scope.getAllActividades = function (){
+				actividadService.getAllActividad().then(function successCallBack(response){
+					$scope.actividades = response.data;
+				});	
+			};
+			$scope.getAllActividades();
+				
+				$scope.guardar = function(){
+					programacionService.createProgramacion($scope.programacion).then(function successCallBack(){
+						$rootScope.events = [];
+						$rootScope.getAllProgramaciones();
+						$scope.programacion={};
+						$scope.cancel();
+						toastr.success('Éxito', 'Programación creada');
+					}, function errorCallBack(error){
+						toastr.warning('Error', 'Error al crear');
 					});
+				};
 
-				};*/
+			
+
+		    $scope.cancel = function () {
+		        $uibModalInstance.dismiss('cancel');
+		    };
 	}])
 	.controller('programacionEditarController', ['$scope', 'programacionService', '$stateParams', '$location', 'toastr', '$rootScope',
 		function ($scope, programacionService, $stateParams, $location, toastr, $rootScope) {

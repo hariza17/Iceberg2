@@ -1,17 +1,9 @@
 <style>
 	
 	.margin{
-margin-bottom: 0.8em;
+		margin-bottom: 0.8em;
 	}
 </style>
-
-
-
-
-
-
-
-
 
 
 <div class="page-header">
@@ -23,7 +15,7 @@ margin-bottom: 0.8em;
 		<li ng-hide="titulo == 'NO'">{{titulo}}</li>
 	</ol>
 	<div class="page-header-actions">
-	<a ui-sref="main.programacion.crear" class="btn btn-sm btn-icon btn-inverse btn-round" data-toggle="tooltip" data-original-title="Edit">
+		<a ng-click="open()"class="btn btn-sm btn-icon btn-inverse btn-round" data-toggle="tooltip" data-original-title="Edit">
 			<i class="icon wb-plus" aria-hidden="true"></i>
 		</a>
 		<!--
@@ -33,31 +25,109 @@ margin-bottom: 0.8em;
 			<button type="button" class="btn btn-sm btn-icon btn-inverse btn-round" data-toggle="tooltip" data-original-title="Setting">
 				<i class="icon wb-settings" aria-hidden="true"></i>
 			</button>-->
-	</div>
-</div>
-
-<div class="page-content" ui-view>
-	<div class="panel">
-		<div class="panel-heading">
-			<h3 class="panel-title"></h3>
-		</div>
-		<div class="panel-body container-fluid">
-		<div id="calendar" ui-calendar="uiConfig.calendar" ng-model="eventSources">
-			
-		</div>
 		</div>
 	</div>
 
+	<div class="page-content" ui-view>
+		<div class="panel">
+			<div class="panel-heading">
+				<h3 class="panel-title"></h3>
+			</div>
+			<div class="panel-body container-fluid">
+				<div id="calendar" ui-calendar="uiConfig.calendar" ng-model="eventSources">
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<script type="text/ng-template" id="windows.html">
+
+		<div modal-render="{{$isRendered}}" tabindex="-1" role="dialog" class="modal modal-success"
+		uib-modal-animation-class="fade" modal-in-class="in" ng-style="{'z-index': 1750 + index*10, display: 'block'}">
+		<div class="modal-dialog {{size ? 'modal-' + size : ''}}  animation-fade">
+			<div class="modal-content" uib-modal-transclude></div>
+		</div>
+	</div>
+</script>
+
+<script type="text/ng-template" id="add-programacion.html" >
+	<div class="modal-header">
+		<h3 class="modal-title">Agregar Programación</h3>
+	</div>
+	<div class="modal-body">
+		<form class="form-horizontal" role="form" ng-submit="guardar()">
+
+				<div class="form-group">
+				<label class="col-lg-3 control-label" for="textArea2">Actividad</label>
+
+				<div class="col-lg-8">
+					<div class="bs-component">
+						<select class="form-control" ng-model="programacion.actividad_id">
+							<option value="">--Elige una Actividad--</option>
+							<option ng-repeat="actividad in actividades" value="{{actividad.id}}">{{actividad.nombre}}</option>
+						</select>
+						<div id="source-button" class="btn btn-system btn-xs" style="display: none;">&lt; &gt;</div>
+					</div>
+				</div>
+			</div>
+
+		
+
+			<div class="form-group">
+				<label class="col-lg-3 control-label" for="textArea2">Observaciones</label>
+				<div class="col-lg-8">
+					<div class="bs-component">
+						<textarea class="form-control" id="textArea2" rows="3" required ng-model="programacion.observaciones"></textarea>
+						<div id="source-button" class="btn btn-system btn-xs" style="display: none;">&lt; &gt;</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<label for="inputStandard" class="col-lg-3 control-label">Inicio</label>
+
+				<div class="col-lg-8">
+					<div class="bs-component">
+						<input type="date" id="inputStandard" class="form-control" required ng-model="programacion.fecha_inicio">
+					</div>
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<label for="inputStandard" class="col-lg-3 control-label">Fin</label>
+
+				<div class="col-lg-8">
+					<div class="bs-component">
+						<input type="date" id="inputStandard" class="form-control" required ng-model="programacion.fecha_fin">
+					</div>
+				</div>
+			</div>
+
+				<div class="form-group">
+				<label class="col-lg-3 control-label" for="textArea2">Zona</label>
+
+				<div class="col-lg-8">
+					<div class="bs-component">
+						<select class="form-control" ng-model="programacion.zona_id">
+							<option value="">--Elige una Zona--</option>
+							<option ng-repeat="zona in zonas" value="{{zona.id}}">{{zona.nombre}}</option>
+						</select>
+						<div id="source-button" class="btn btn-system btn-xs" style="display: none;">&lt; &gt;</div>
+					</div>
+				</div>
+			</div>
+		
+
+		</form>
 </div>
 
-<script type="text/ng-template" id="windows.html">
-
-    <div modal-render="{{$isRendered}}" tabindex="-1" role="dialog" class="modal modal-success"
-         uib-modal-animation-class="fade" modal-in-class="in" ng-style="{'z-index': 1750 + index*10, display: 'block'}">
-        <div class="modal-dialog {{size ? 'modal-' + size : ''}}  animation-fade">
-            <div class="modal-content" uib-modal-transclude></div>
-        </div>
-    </div>
-
+	<div class="modal-footer">
+			<button type="submit" class="btn btn-primary" ng-click="guardar()">{{boton}}</button>
+			<button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+		</div>
 
 </script>

@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Programacion extends Model
 {
-    protected $table = 'programacion';
+    protected $table = 'programaciones';
 
-	protected $fillable=['fecha','estado','observaciones','actividad_id','zona_id'];
+	protected $fillable=['fecha_inicio','fecha_fin','estado','observaciones','actividad_id','zona_id'];
 
 	public $timestamps = false;
 
