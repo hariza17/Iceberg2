@@ -85,10 +85,19 @@ controllerModule
 
 	}])
 	
-	.controller ('beneficiarioEditarController', [ '$scope' , 'beneficiarioService', '$stateParams' , '$location', '$rootScope', 'toastr',
-		function($scope, beneficiarioService, $stateParams, $location, $rootScope, toastr){
+	.controller ('beneficiarioEditarController', [ '$scope' , 'beneficiarioService', '$stateParams' , '$location', '$rootScope', 'toastr', 'zonaService',
+		function($scope, beneficiarioService, $stateParams, $location, $rootScope, toastr, zonaService){
 			$scope.accion = "Actualizar";
 			$rootScope.titulo = "Editar beneficiario";
+			
+			$scope.zonas = [];
+			$scope.getAllZonas = function () {
+				zonaService.getAllZona().then(function (response) {
+					$scope.zonas = response.data;
+				});
+			};
+			$scope.getAllZonas();
+
 
 			$scope.getBeneficiario = function (beneficiarioId){
 				beneficiarioService.getBeneficiarioById(beneficiarioId).then (function successCallBack(response){

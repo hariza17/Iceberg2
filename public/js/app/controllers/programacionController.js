@@ -59,7 +59,8 @@ controllerModule
                 }
             };
 
-         $scope.eventSources = [$rootScope.events, $scope.eventSource];
+//id of undenfined se resuelve quitando el eventsources
+         $scope.eventSources = [$rootScope.events];
 
     }])
 	.controller('programacionDetalleController', ['$scope', 'programacionService',
@@ -73,6 +74,7 @@ controllerModule
 			//funciona
 			$rootScope.titulo = "Crear nueva zona";
 			//console.log($rootScope.SelectedEvent.end);
+			//$rootScope.getAllProgramaciones();
 			$scope.boton = "Guardar";
 			//$scope.progracion = [];
 
@@ -92,12 +94,11 @@ controllerModule
 				});	
 			};
 			$scope.getAllActividades();
-				
+
 				$scope.guardar = function(){
 					programacionService.createProgramacion($scope.programacion).then(function successCallBack(){
-						$rootScope.events = [];
-						$rootScope.getAllProgramaciones();
-						$scope.programacion={};
+						//$rootScope.getAllProgramaciones();
+						//$scope.programacion={};
 						$scope.cancel();
 						toastr.success('Éxito', 'Programación creada');
 					}, function errorCallBack(error){
