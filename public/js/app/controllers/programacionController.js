@@ -10,20 +10,22 @@ controllerModule
 					console.log("titulo");
 				};
  					$rootScope.SelectedEvent = null;
-					$rootScope.events = [];
+					$scope.events = [];
+					$scope.eventSources = [$scope.events];
 				
 			$rootScope.getAllProgramaciones = function (){
     			programacionService.getAllProgramacion().then(function successCallBack(response){
-    				//$scope.events.slice(0, events.length);
+    				$scope.events.slice(0, $scope.events.length);
     				console.log(response.data);
     				angular.forEach(response.data, function(value){
 
-    					$rootScope.events.push({
+    					$scope.events.push({
     						title: value.actividad_id,
     						descripcion: value.observaciones,
     						start: value.fecha_inicio, // new date(parseIt(value.fecha_inicio.substr(6)))
     						end: value.fecha_fin,// new date(parseIt(value.fecha_fin.substr(6)))
-    						zona: value.zona_id
+    						zona: value.zona_id,
+    						stick: true
     					});
     				});
 
@@ -59,8 +61,8 @@ controllerModule
                 }
             };
 
-//id of undenfined se resuelve quitando el eventsources
-         $scope.eventSources = [$rootScope.events];
+
+ 
 
     }])
 	.controller('programacionDetalleController', ['$scope', 'programacionService',

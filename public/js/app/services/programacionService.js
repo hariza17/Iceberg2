@@ -3,7 +3,10 @@ servicesModule.factory('programacionService', ['$http', function ($http) {
         return {
             apiUrl: apiUrl,
             getAllProgramacion: function () {
-                return $http.get(this.apiUrl + 'programacion');
+                return $http.get(this.apiUrl + 'programacion', {
+                    cache: true,
+                    params: {}
+                });
             },
             getProgramacionById: function (programacionId) {
                 return $http.get(this.apiUrl + 'programacion/' + programacionId);
