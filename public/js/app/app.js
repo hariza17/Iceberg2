@@ -199,6 +199,7 @@ icebergApp.config(['$stateProvider', '$urlRouterProvider', 'toastrConfig','$loca
                     templateUrl: '/js/app/views/programacion/base.html',
                     controller: 'programacionController' 
                 })
+                /*
                 .state('main.programacion.crear', {
                      url: '/crear',
                     templateUrl: '/js/app/views/programacion/crear.html',
@@ -213,7 +214,7 @@ icebergApp.config(['$stateProvider', '$urlRouterProvider', 'toastrConfig','$loca
                     url: '/editar/:programacionId',
                     templateUrl: '/js/app/views/programacion/crear.html',
                     controller: 'programacionEditarController'
-                })
+                })*/
 
 }]);
 
