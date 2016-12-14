@@ -1,0 +1,947 @@
+<div class="page-content">
+	<div class="panel">
+			<wizard on-finish="finishedWizard()"> 
+			    <wz-step wz-title="Conformación Familiar">
+			       	<form class="form-horizontal">
+						<fieldset>
+
+						<!-- Form Name -->
+						<h2>Conformación Familiar</h2>
+						<hr/>
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+						  <label class="col-md-6 control-label align">¿En la familia hay niños y niñas entre 0 y 6 meses?</label>
+						  <div class="col-md-2 checkbox checkbox-primary"> 
+						    <label class="radio-inline">
+						      <input type="radio" name="radios1" value="Si" checked="checked">
+						      Si
+						    </label> 
+						    <label class="radio-inline">
+						      <input type="radio" name="radios1" value="No">
+						      No
+						    </label>
+						  </div>
+						    <div class="col-md-2">
+							  <input name="textinput1" type="text" placeholder="¿Cuántos?" class="form-control input-md">
+							  </div>
+						</div>
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+						  <label class="col-md-6 control-label align">¿En la familia hay niños entre 7 meses y 2 años de edad?</label>
+						  <div class="col-md-2"> 
+						    <label class="radio-inline">
+						      <input type="radio" name="radios2" value="Si" checked="checked">
+						      Si
+						    </label> 
+						    <label class="radio-inline">
+						      <input type="radio" name="radios2" value="No">
+						      No
+						    </label>
+						  </div>
+ 							<div class="col-md-2">
+							  <input name="textinput2" type="text" placeholder="¿Cuántos?" class="form-control input-md">
+							  </div>
+
+						</div>
+
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+						  <label class="col-md-6 control-label align">¿En la familia hay niños entre 3 y 5 años?</label>
+						  <div class="col-md-2"> 
+						    <label class="radio-inline">
+						      <input type="radio" name="radios3" value="Si" checked="checked">
+						      Si
+						    </label> 
+						    <label class="radio-inline">
+						      <input type="radio" name="radios3" id="radios-1" value="No">
+						      No
+						    </label>
+						  </div>
+						   <div class="col-md-2">
+							  <input name="textinput3" type="text" placeholder="¿Cuántos?" class="form-control input-md">
+							  </div>
+						</div>
+							<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+						  <label class="col-md-6 control-label align">¿En la familia hay niños y niñas entre 6 y 11 años?</label>
+						  <div class="col-md-2"> 
+						    <label class="radio-inline">
+						      <input type="radio" name="radios4" value="Si" checked="checked">
+						      Si
+						    </label> 
+						    <label class="radio-inline">
+						      <input type="radio" name="radios4"  value="No">
+						      No
+						    </label>
+						  </div>
+						   <div class="col-md-2">
+							  <input name="textinput4" type="text" placeholder="¿Cuántos?" class="form-control input-md">
+							  </div>
+						</div>
+
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+						  <label class="col-md-6 control-label align">¿En la familia hay niños y niñas entre 12 y 17 años?</label>
+						  <div class="col-md-2"> 
+						    <label class="radio-inline">
+						      <input type="radio" name="radios5" value="Si" checked="checked">
+						      Si
+						    </label> 
+						    <label class="radio-inline">
+						      <input type="radio" name="radios5"  value="No">
+						      No
+						    </label>
+						  </div>
+						   <div class="col-md-2">
+							  <input name="textinput5" type="text" placeholder="¿Cuántos?" class="form-control input-md">
+							  </div>
+						</div>
+
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+						  <label class="col-md-6 control-label align">¿En la familia hay hombres y mujeres entre 18 y 40 años?</label>
+						  <div class="col-md-2"> 
+						    <label class="radio-inline">
+						      <input type="radio" name="radios6" value="Si" checked="checked">
+						      Si
+						    </label> 
+						    <label class="radio-inline">
+						      <input type="radio" name="radios6"  value="No">
+						      No
+						    </label>
+						  </div>
+						   <div class="col-md-2">
+							  <input name="textinput6" type="text" placeholder="¿Cuántos?" class="form-control input-md">
+							  </div>
+						</div>
+
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+						  <label class="col-md-6 control-label align">¿En la familia hay hombres y mujeres entre 41 y 64 años?</label>
+						  <div class="col-md-2"> 
+						    <label class="radio-inline">
+						      <input type="radio" name="radios7" value="Si" checked="checked">
+						      Si
+						    </label> 
+						    <label class="radio-inline">
+						      <input type="radio" name="radios7" value="No">
+						      No
+						    </label>
+						  </div>
+						   <div class="col-md-2">
+							  <input name="textinput7" type="text" placeholder="¿Cuántos?" class="form-control input-md">
+							  </div>
+						</div>
+
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+						  <label class="col-md-6 control-label align">¿En la familia hay mujeres y hombres mayores de 65 años?</label>
+						  <div class="col-md-2"> 
+						    <label class="radio-inline">
+						      <input type="radio" name="radios8" value="Si" checked="checked">
+						      Si
+						    </label> 
+						    <label class="radio-inline">
+						      <input type="radio" name="radios8" value="No">
+						      No
+						    </label>
+						  </div>
+						   <div class="col-md-2">
+							  <input name="textinput8" type="text" placeholder="¿Cuántos?" class="form-control input-md">
+							  </div>
+						</div>
+
+						<div class="col-md-12"><h5><strong>SITUACIÓN ESPECIAL</strong></h5></div>
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+						  <label class="col-md-6 control-label align">¿En la familia hay mujeres embarazadas?</label>
+						  <div class="col-md-2"> 
+						    <label class="radio-inline">
+						      <input type="radio" name="radios9" value="Si" checked="checked">
+						      Si
+						    </label> 
+						    <label class="radio-inline">
+						      <input type="radio" name="radios9" value="No">
+						      No
+						    </label>
+						  </div>
+						   <div class="col-md-2">
+							  <input name="textinput9" type="text" placeholder="¿Cuántos?" class="form-control input-md">
+							  </div>
+						</div>
+
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+						  <label class="col-md-6 control-label align">¿En la familia hay personas con discapacidad?</label>
+						  <div class="col-md-2"> 
+						    <label class="radio-inline">
+						      <input type="radio" name="radios10" value="Si" checked="checked">
+						      Si
+						    </label> 
+						    <label class="radio-inline">
+						      <input type="radio" name="radios10" value="No">
+						      No
+						    </label>
+						  </div>
+						   <div class="col-md-2">
+							  <input name="textinput10" type="text" placeholder="¿Cuántos?" class="form-control input-md">
+							  </div>
+						</div>
+					</fieldset>
+				   </form>
+			     <input type="submit" class="pull-right" wz-next value="Continue" />
+			    </wz-step>
+
+		    <wz-step wz-title="Datos de la vivienda">
+		       <h2>Datos de la vivienda</h2>
+				<hr/>
+
+
+				<form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+
+<!-- Multiple Radios (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label align" for="radios">La familia vive en casa:</label>
+  <div class="col-md-8"> 
+    <label class="radio-inline" for="radios-0">
+      <input type="radio" name="radios" id="radios-0" value="Propia" checked="checked">
+      Propia
+    </label> 
+    <label class="radio-inline" for="radios-1">
+      <input type="radio" name="radios" id="radios-1" value="Alquilada">
+      Alquilada
+    </label> 
+    <label class="radio-inline" for="radios-2">
+      <input type="radio" name="radios" id="radios-2" value="La cuida">
+      La cuida
+    </label>
+     <label class="radio-inline" for="radios-2">
+      <input type="radio" name="radios" id="radios-2" value="La cuida">
+     Otra
+    </label>
+  </div>
+</div>
+<!-- Multiple Radios (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label align" for="radios">En qué tipo de vivienda habita?:</label>
+  <div class="col-md-8"> 
+    <label class="radio-inline" for="radios-0">
+      <input type="radio" name="radios" id="radios-0" value="Casa" checked="checked">
+      Casa
+    </label> 
+    <label class="radio-inline" for="radios-1">
+      <input type="radio" name="radios" id="radios-1" value="Apartamento">
+      Apartamento
+    </label> 
+    <label class="radio-inline" for="radios-2">
+      <input type="radio" name="radios" id="radios-2" value="Cuarto de Inquilinato">
+      Cuarto de Inquilinato
+    </label>
+      <label class="radio-inline" for="radios-2">
+      <input type="radio" name="radios" id="radios-2" value="La cuida">
+     Otra
+    </label>
+  </div>
+</div>
+
+<!-- Multiple Checkboxes (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label align" for="checkboxes">Cuál de los siguientes servicios tiene este hogar?:</label>
+  <div class="col-md-8">
+    <label class="checkbox-inline" for="checkboxes-0">
+      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="Energía">
+      Energía
+    </label>
+    <label class="checkbox-inline" for="checkboxes-1">
+      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="Gas Natural">
+      Gas Natural
+    </label>
+    <label class="checkbox-inline" for="checkboxes-2">
+      <input type="checkbox" name="checkboxes" id="checkboxes-2" value="Acueducto">
+      Acueducto
+    </label>
+    <label class="checkbox-inline" for="checkboxes-3">
+      <input type="checkbox" name="checkboxes" id="checkboxes-3" value="Alcantarillado">
+      Alcantarillado
+    </label>
+    <label class="checkbox-inline" for="checkboxes-4">
+      <input type="checkbox" name="checkboxes" id="checkboxes-4" value="Tv Cable">
+      Tv Cable
+    </label>
+    <label class="checkbox-inline" for="checkboxes-5">
+      <input type="checkbox" name="checkboxes" id="checkboxes-5" value="Teléfono Fijo">
+      Teléfono Fijo
+    </label>
+     <label class="checkbox-inline" for="checkboxes-5">
+      <input type="checkbox" name="checkboxes" id="checkboxes-5" value="Teléfono Fijo">
+      Ninguno de los anterioress
+    </label>
+  </div>
+</div>
+
+<!-- Multiple Radios (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label align" for="radios">Cuál es el material predominante de las paredes exteriores? (Marque un sola respuesta)</label>
+  <div class="col-md-8"> 
+    <label class="radio-inline" for="radios-0">
+      <input type="radio" name="radios" id="radios-0" value="Bloque /Ladrillo" checked="checked">
+      Bloque /Ladrillo
+    </label> 
+    <label class="radio-inline" for="radios-1">
+      <input type="radio" name="radios" id="radios-1" value="Bahareque">
+      Bahareque
+    </label> 
+    <label class="radio-inline" for="radios-2">
+      <input type="radio" name="radios" id="radios-2" value="Madera/Tabla/Tablón">
+      Madera/Tabla/Tablón
+    </label> 
+    <label class="radio-inline" for="radios-3">
+      <input type="radio" name="radios" id="radios-3" value="Guadua/Caña/Esterilla">
+      Guadua/Caña/Esterilla
+    </label> 
+    <label class="radio-inline" for="radios-4">
+      <input type="radio" name="radios" id="radios-4" value="Zinc/Tela/Cartón">
+      Zinc/Tela/Cartón
+    </label> 
+    <label class="radio-inline" for="radios-5">
+      <input type="radio" name="radios" id="radios-5" value="Desechos Plásticos">
+      Desechos Plásticos
+    </label> 
+    <label class="radio-inline" for="radios-6">
+      <input type="radio" name="radios" id="radios-6" value="Sin Paredes">
+      Sin Paredes
+    </label>
+  </div>
+</div>
+
+<!-- Multiple Radios (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label align" for="radios">Cuál es el material predominante de los pisos?(Marque un sola respuesta)</label>
+  <div class="col-md-8"> 
+    <label class="radio-inline" for="radios-0">
+      <input type="radio" name="radios" id="radios-0" value="Cerámica/Baldosas" checked="checked">
+      Cerámica/Baldosas
+    </label> 
+    <label class="radio-inline" for="radios-1">
+      <input type="radio" name="radios" id="radios-1" value="Tableta/Tablón">
+      Tableta/Tablón
+    </label> 
+    <label class="radio-inline" for="radios-2">
+      <input type="radio" name="radios" id="radios-2" value="Cemento/Gravilla">
+      Cemento/Gravilla
+    </label>
+     <label class="radio-inline" for="radios-2">
+      <input type="radio" name="radios" id="radios-2" value="La cuida">
+     Otro
+    </label>
+  </div>
+</div>
+
+<!-- Multiple Radios (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label align" for="radios">Cuantos cuartos o piezas dispone su hogar? (Marque un sola respuesta)</label>
+  <div class="col-md-8"> 
+    <label class="radio-inline" for="radios-0">
+      <input type="radio" name="radios" id="radios-0" value="1-2" checked="checked">
+      1-2
+    </label> 
+    <label class="radio-inline" for="radios-1">
+      <input type="radio" name="radios" id="radios-1" value="3-4">
+      3-4
+    </label> 
+    <label class="radio-inline" for="radios-2">
+      <input type="radio" name="radios" id="radios-2" value="5-6">
+      5-6
+    </label>
+  </div>
+</div>
+
+<!-- Multiple Radios (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label align" for="radios">Posee animales de cría:</label>
+  <div class="col-md-8"> 
+    <label class="radio-inline" for="radios-0">
+      <input type="radio" name="radios" id="radios-0" value="Si" checked="checked">
+      Si
+    </label> 
+    <label class="radio-inline" for="radios-1">
+      <input type="radio" name="radios" id="radios-1" value="No">
+      No
+    </label>
+  </div>
+</div>
+
+<!-- Multiple Checkboxes (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label align" for="checkboxes">Animales de cria:</label>
+  <div class="col-md-8">
+    <label class="checkbox-inline" for="checkboxes-0">
+      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="Gallinas">
+      Gallinas
+    </label>
+    <label class="checkbox-inline" for="checkboxes-1">
+      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="Cerdos">
+      Cerdos
+    </label>
+    <label class="checkbox-inline" for="checkboxes-2">
+      <input type="checkbox" name="checkboxes" id="checkboxes-2" value="Pollos">
+      Pollos
+    </label>
+    <label class="checkbox-inline" for="checkboxes-3">
+      <input type="checkbox" name="checkboxes" id="checkboxes-3" value="Cocas">
+      Cocas
+    </label>
+    <label class="checkbox-inline" for="checkboxes-4">
+      <input type="checkbox" name="checkboxes" id="checkboxes-4" value="Pavos">
+      Pavos
+    </label>
+    <label class="checkbox-inline" for="checkboxes-5">
+      <input type="checkbox" name="checkboxes" id="checkboxes-5" value="Patos">
+      Patos
+    </label>
+    <label class="checkbox-inline" for="checkboxes-6">
+      <input type="checkbox" name="checkboxes" id="checkboxes-6" value="Vacas">
+      Vacas
+    </label>
+     <label class="checkbox-inline" for="checkboxes-3">
+      <input type="checkbox" name="checkboxes" id="checkboxes-3" value="Desbordamiento">
+      otro
+    </label>
+  </div>
+</div>
+
+<!-- Multiple Radios (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label align" for="radios">Su vivienda se Encuentra en Riesgo:</label>
+  <div class="col-md-8"> 
+    <label class="radio-inline" for="radios-0">
+      <input type="radio" name="radios" id="radios-0" value="Si" checked="checked">
+      Si
+    </label> 
+    <label class="radio-inline" for="radios-1">
+      <input type="radio" name="radios" id="radios-1" value="No">
+      No
+    </label>
+  </div>
+</div>
+
+<!-- Multiple Checkboxes (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label align" for="checkboxes">Riesgos</label>
+  <div class="col-md-8">
+    <label class="checkbox-inline" for="checkboxes-0">
+      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="Inundaciones">
+      Inundaciones
+    </label>
+    <label class="checkbox-inline" for="checkboxes-1">
+      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="Avalancha/Derrumbe/Deslizamento">
+      Avalancha/Derrumbe/Deslizamento
+    </label>
+    <label class="checkbox-inline" for="checkboxes-2">
+      <input type="checkbox" name="checkboxes" id="checkboxes-2" value="Hundimiento Del Terreno">
+      Hundimiento Del Terreno
+    </label>
+    <label class="checkbox-inline" for="checkboxes-3">
+      <input type="checkbox" name="checkboxes" id="checkboxes-3" value="Desbordamiento">
+      Desbordamiento
+    </label>
+    <label class="checkbox-inline" for="checkboxes-3">
+      <input type="checkbox" name="checkboxes" id="checkboxes-3" value="Desbordamiento">
+      otro
+    </label>
+  </div>
+</div>
+
+
+
+</fieldset>
+</form>
+
+		        <input type="submit" wz-next  class="pull-right" value="Go on" />
+		    </wz-step>
+
+
+		    <wz-step wz-title="Saneamiento Básico">
+		        <h2>Saneamiento Básico</h2>
+				<hr/>
+					<form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+
+<!-- Multiple Checkboxes (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="checkboxes">¿De dónde se abastece de agua? (Espere la respuesta y marque todas las menciones):</label>
+  <div class="col-md-8">
+    <label class="checkbox-inline" for="checkboxes-0">
+      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="Acueducto">
+      Acueducto
+    </label>
+    <label class="checkbox-inline" for="checkboxes-1">
+      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="Pozo">
+      Pozo
+    </label>
+    <label class="checkbox-inline" for="checkboxes-2">
+      <input type="checkbox" name="checkboxes" id="checkboxes-2" value="Agua Lluvia">
+      Agua Lluvia
+    </label>
+    <label class="checkbox-inline" for="checkboxes-3">
+      <input type="checkbox" name="checkboxes" id="checkboxes-3" value="Pila Publica">
+      Pila Publica
+    </label>
+    <label class="checkbox-inline" for="checkboxes-4">
+      <input type="checkbox" name="checkboxes" id="checkboxes-4" value="Carro Tanque">
+      Carro Tanque
+    </label>
+    <label class="checkbox-inline" for="checkboxes-5">
+      <input type="checkbox" name="checkboxes" id="checkboxes-5" value="Rio/manantial">
+      Rio/manantial
+    </label>
+    <label class="checkbox-inline" for="checkboxes-6">
+      <input type="checkbox" name="checkboxes" id="checkboxes-6" value="Comprada">
+      Comprada
+    </label>
+    <label class="checkbox-inline" for="checkboxes-7">
+      <input type="checkbox" name="checkboxes" id="checkboxes-7" value="NS/NR">
+      NS/NR
+    </label>
+  </div>
+</div>
+
+<!-- Multiple Checkboxes (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="checkboxes">¿Qué tratamiento le hacen al agua para tomar? (Espere la respuesta y marque todas las menciones):</label>
+  <div class="col-md-8">
+    <label class="checkbox-inline" for="checkboxes-0">
+      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="Ninguno">
+      Ninguno
+    </label>
+    <label class="checkbox-inline" for="checkboxes-1">
+      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="Hervirlo">
+      Hervirlo
+    </label>
+    <label class="checkbox-inline" for="checkboxes-2">
+      <input type="checkbox" name="checkboxes" id="checkboxes-2" value="Colarla">
+      Colarla
+    </label>
+    <label class="checkbox-inline" for="checkboxes-3">
+      <input type="checkbox" name="checkboxes" id="checkboxes-3" value="Filtrarla">
+      Filtrarla
+    </label>
+    <label class="checkbox-inline" for="checkboxes-4">
+      <input type="checkbox" name="checkboxes" id="checkboxes-4" value="Otro">
+      Otro
+    </label>
+  </div>
+</div>
+
+<!-- Multiple Checkboxes (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="checkboxes">¿Cómo disponen de la basura que produce su vivienda?</label>
+  <div class="col-md-8">
+    <label class="checkbox-inline" for="checkboxes-0">
+      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="La recoge el camión">
+      La recoge el camión
+    </label>
+    <label class="checkbox-inline" for="checkboxes-1">
+      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="Reciclarla">
+      Reciclarla
+    </label>
+    <label class="checkbox-inline" for="checkboxes-2">
+      <input type="checkbox" name="checkboxes" id="checkboxes-2" value="Se quema">
+      Se quema
+    </label>
+    <label class="checkbox-inline" for="checkboxes-3">
+      <input type="checkbox" name="checkboxes" id="checkboxes-3" value="En campo abierto">
+      En campo abierto
+    </label>
+    <label class="checkbox-inline" for="checkboxes-4">
+      <input type="checkbox" name="checkboxes" id="checkboxes-4" value="La entierran">
+      La entierran
+    </label>
+  </div>
+</div>
+
+<!-- Multiple Checkboxes (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="checkboxes">¿Cómo es la disposición de excretas en su familia?</label>
+  <div class="col-md-8">
+    <label class="checkbox-inline" for="checkboxes-0">
+      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="Baño">
+      Baño
+    </label>
+    <label class="checkbox-inline" for="checkboxes-1">
+      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="Letrina">
+      Letrina
+    </label>
+    <label class="checkbox-inline" for="checkboxes-2">
+      <input type="checkbox" name="checkboxes" id="checkboxes-2" value="Poza Séptica">
+      Poza Séptica
+    </label>
+    <label class="checkbox-inline" for="checkboxes-3">
+      <input type="checkbox" name="checkboxes" id="checkboxes-3" value="Campo abierto">
+      Campo abierto
+    </label>
+    <label class="checkbox-inline" for="checkboxes-4">
+      <input type="checkbox" name="checkboxes" id="checkboxes-4" value="La quema">
+      La quema
+    </label>
+    <label class="checkbox-inline" for="checkboxes-5">
+      <input type="checkbox" name="checkboxes" id="checkboxes-5" value="La entierran">
+      La entierran
+    </label>
+    <label class="checkbox-inline" for="checkboxes-6">
+      <input type="checkbox" name="checkboxes" id="checkboxes-6" value="Otro">
+      Otro
+    </label>
+  </div>
+</div>
+
+<!-- Multiple Radios (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="radios">El agua para consumo humano se mantiene en recipientes tapados</label>
+  <div class="col-md-8"> 
+    <label class="radio-inline" for="radios-0">
+      <input type="radio" name="radios" id="radios-0" value="Si" checked="checked">
+      Si
+    </label> 
+    <label class="radio-inline" for="radios-1">
+      <input type="radio" name="radios" id="radios-1" value="No">
+      No
+    </label>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+
+
+
+
+		        <input type="submit" wz-next  class="pull-right" value="Finish now" />
+		    </wz-step>
+		     <wz-step wz-title="Relaciones Intrafamiliares">
+		        <h2>Relaciones Intrafamiliares</h2>
+				<hr/>
+
+					<form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<!-- Multiple Checkboxes (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="checkboxes">¿Cuáles son las formas más frecuentes en que los adultos resuelven sus conflictos?</label>
+  <div class="col-md-8">
+    <label class="checkbox-inline" for="checkboxes-0">
+      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="Dialogando">
+      Dialogando
+    </label>
+    <label class="checkbox-inline" for="checkboxes-1">
+      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="Con gritos y peleas">
+      Con gritos y peleas
+    </label>
+    <label class="checkbox-inline" for="checkboxes-2">
+      <input type="checkbox" name="checkboxes" id="checkboxes-2" value="Con golpes y maltrato">
+      Con golpes y maltrato
+    </label>
+    <label class="checkbox-inline" for="checkboxes-3">
+      <input type="checkbox" name="checkboxes" id="checkboxes-3" value="Dejan que pase el tiempo">
+      Dejan que pase el tiempo
+    </label>
+    <label class="checkbox-inline" for="checkboxes-4">
+      <input type="checkbox" name="checkboxes" id="checkboxes-4" value="Otro">
+      Otro
+    </label>
+  </div>
+</div>
+
+<!-- Multiple Checkboxes (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="checkboxes">¿Cuáles son las formas más frecuentes en que los padres de familia le demuestran afecto a los niños?</label>
+  <div class="col-md-8">
+    <label class="checkbox-inline" for="checkboxes-0">
+      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="NA">
+      NA
+    </label>
+    <label class="checkbox-inline" for="checkboxes-1">
+      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="Regalos">
+      Regalos
+    </label>
+    <label class="checkbox-inline" for="checkboxes-2">
+      <input type="checkbox" name="checkboxes" id="checkboxes-2" value="Besos/abrazos">
+      Besos/abrazos
+    </label>
+    <label class="checkbox-inline" for="checkboxes-3">
+      <input type="checkbox" name="checkboxes" id="checkboxes-3" value="No lo demuestran">
+      No lo demuestran
+    </label>
+    <label class="checkbox-inline" for="checkboxes-4">
+      <input type="checkbox" name="checkboxes" id="checkboxes-4" value="Otra">
+      Otra
+    </label>
+  </div>
+</div>
+
+<!-- Multiple Checkboxes (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="checkboxes">¿Qué hacen en la familia cuando los niños se portan mal?</label>
+  <div class="col-md-8">
+    <label class="checkbox-inline" for="checkboxes-0">
+      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="No Aplica">
+      No Aplica
+    </label>
+    <label class="checkbox-inline" for="checkboxes-1">
+      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="Nada">
+      Nada
+    </label>
+    <label class="checkbox-inline" for="checkboxes-2">
+      <input type="checkbox" name="checkboxes" id="checkboxes-2" value="Diálogo">
+      Diálogo
+    </label>
+    <label class="checkbox-inline" for="checkboxes-3">
+      <input type="checkbox" name="checkboxes" id="checkboxes-3" value="Palmadas">
+      Palmadas
+    </label>
+    <label class="checkbox-inline" for="checkboxes-4">
+      <input type="checkbox" name="checkboxes" id="checkboxes-4" value="Regaños">
+      Regaños
+    </label>
+    <label class="checkbox-inline" for="checkboxes-5">
+      <input type="checkbox" name="checkboxes" id="checkboxes-5" value="Prohibición">
+      Prohibición
+    </label>
+    <label class="checkbox-inline" for="checkboxes-6">
+      <input type="checkbox" name="checkboxes" id="checkboxes-6" value="Puños">
+      Puños
+    </label>
+    <label class="checkbox-inline" for="checkboxes-7">
+      <input type="checkbox" name="checkboxes" id="checkboxes-7" value="Encierro">
+      Encierro
+    </label>
+    <label class="checkbox-inline" for="checkboxes-8">
+      <input type="checkbox" name="checkboxes" id="checkboxes-8" value="Los ignora">
+      Los ignora
+    </label>
+    <label class="checkbox-inline" for="checkboxes-9">
+      <input type="checkbox" name="checkboxes" id="checkboxes-9" value="Trabajo">
+      Trabajo
+    </label>
+    <label class="checkbox-inline" for="checkboxes-10">
+      <input type="checkbox" name="checkboxes" id="checkboxes-10" value="Niega alimentos">
+      Niega alimentos
+    </label>
+    <label class="checkbox-inline" for="checkboxes-11">
+      <input type="checkbox" name="checkboxes" id="checkboxes-11" value="Sin ropa">
+      Sin ropa
+    </label>
+    <label class="checkbox-inline" for="checkboxes-12">
+      <input type="checkbox" name="checkboxes" id="checkboxes-12" value="Los moja">
+      Los moja
+    </label>
+    <label class="checkbox-inline" for="checkboxes-13">
+      <input type="checkbox" name="checkboxes" id="checkboxes-13" value="Otro">
+      Otro
+    </label>
+  </div>
+</div>
+
+<!-- Multiple Checkboxes (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="checkboxes">¿Cómo es la relación de los adultos con los niños y niñas de la familia?</label>
+  <div class="col-md-8">
+    <label class="checkbox-inline" for="checkboxes-0">
+      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="No Aplica">
+      No Aplica
+    </label>
+    <label class="checkbox-inline" for="checkboxes-1">
+      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="Es indiferente">
+      Es indiferente
+    </label>
+    <label class="checkbox-inline" for="checkboxes-2">
+      <input type="checkbox" name="checkboxes" id="checkboxes-2" value="Las opiniones de niños y niñas son tenidas en cuenta">
+      Las opiniones de niños y niñas son tenidas en cuenta
+    </label>
+    <label class="checkbox-inline" for="checkboxes-3">
+      <input type="checkbox" name="checkboxes" id="checkboxes-3" value="Existe cuidado por parte de los padres">
+      Existe cuidado por parte de los padres
+    </label>
+    <label class="checkbox-inline" for="checkboxes-4">
+      <input type="checkbox" name="checkboxes" id="checkboxes-4" value="Es amorosa">
+      Es amorosa
+    </label>
+    <label class="checkbox-inline" for="checkboxes-5">
+      <input type="checkbox" name="checkboxes" id="checkboxes-5" value="Otra">
+      Otra
+    </label>
+  </div>
+</div>
+
+<!-- Multiple Checkboxes (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="checkboxes">¿Considera usted que el niño o la niña tiene oportunidades de recreación y esparcimiento en la comunidad?</label>
+  <div class="col-md-8">
+    <label class="checkbox-inline" for="checkboxes-0">
+      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="Si">
+      Si
+    </label>
+    <label class="checkbox-inline" for="checkboxes-1">
+      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="No">
+      No
+    </label>
+    <label class="checkbox-inline" for="checkboxes-2">
+      <input type="checkbox" name="checkboxes" id="checkboxes-2" value="NS">
+      NS
+    </label>
+    <label class="checkbox-inline" for="checkboxes-3">
+      <input type="checkbox" name="checkboxes" id="checkboxes-3" value="NR">
+      NR
+    </label>
+  </div>
+</div>
+
+<!-- Multiple Checkboxes (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="checkboxes">¿Cuáles considera usted son las oportunidades de recreación y esparcimiento con que cuenta el niño o la niña?</label>
+  <div class="col-md-8">
+    <label class="checkbox-inline" for="checkboxes-0">
+      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="Ir de paseo con sus padres">
+      Ir de paseo con sus padres
+    </label>
+    <label class="checkbox-inline" for="checkboxes-1">
+      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="Estar en casa de amigos">
+      Estar en casa de amigos
+    </label>
+    <label class="checkbox-inline" for="checkboxes-2">
+      <input type="checkbox" name="checkboxes" id="checkboxes-2" value="Ver televisión">
+      Ver televisión
+    </label>
+    <label class="checkbox-inline" for="checkboxes-3">
+      <input type="checkbox" name="checkboxes" id="checkboxes-3" value="El colegio">
+      El colegio
+    </label>
+    <label class="checkbox-inline" for="checkboxes-4">
+      <input type="checkbox" name="checkboxes" id="checkboxes-4" value="La calle">
+      La calle
+    </label>
+    <label class="checkbox-inline" for="checkboxes-5">
+      <input type="checkbox" name="checkboxes" id="checkboxes-5" value="Ir al parque">
+      Ir al parque
+    </label>
+    <label class="checkbox-inline" for="checkboxes-6">
+      <input type="checkbox" name="checkboxes" id="checkboxes-6" value="Ir a fiesta">
+      Ir a fiesta
+    </label>
+    <label class="checkbox-inline" for="checkboxes-7">
+      <input type="checkbox" name="checkboxes" id="checkboxes-7" value="Otros">
+      Otros
+    </label>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+
+
+		        <input type="submit" wz-next  class="pull-right" value="Finish now" />
+		    </wz-step>
+		      <wz-step wz-title="">
+		        <h2>Infraestructura Vial y Movilidad</h2>
+				<hr/>
+
+
+				<form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<!-- Multiple Radios (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="radios">¿Cómo considera que se encuentra el estado de las vías?</label>
+  <div class="col-md-8"> 
+    <label class="radio-inline" for="radios-0">
+      <input type="radio" name="radios" id="radios-0" value="Bueno" checked="checked">
+      Bueno
+    </label> 
+    <label class="radio-inline" for="radios-1">
+      <input type="radio" name="radios" id="radios-1" value="Regular">
+      Regular
+    </label> 
+    <label class="radio-inline" for="radios-2">
+      <input type="radio" name="radios" id="radios-2" value="Malo">
+      Malo
+    </label>
+  </div>
+</div>
+
+<!-- Multiple Radios (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="radios">¿Cuál es el principal medio de transporte al interior de la comunidad?</label>
+  <div class="col-md-8"> 
+    <label class="radio-inline" for="radios-0">
+      <input type="radio" name="radios" id="radios-0" value="Moto" checked="checked">
+      Moto
+    </label> 
+    <label class="radio-inline" for="radios-1">
+      <input type="radio" name="radios" id="radios-1" value="Carro">
+      Carro
+    </label> 
+    <label class="radio-inline" for="radios-2">
+      <input type="radio" name="radios" id="radios-2" value="Bus">
+      Bus
+    </label> 
+    <label class="radio-inline" for="radios-3">
+      <input type="radio" name="radios" id="radios-3" value="Bicicleta">
+      Bicicleta
+    </label> 
+    <label class="radio-inline" for="radios-4">
+      <input type="radio" name="radios" id="radios-4" value="A pie">
+      A pie
+    </label>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="radios">¿Cuál es el principal medio de transporte al interior de la comunidad?</label>
+  <div class="col-md-8"> 
+    <label class="radio-inline" for="radios-0">
+      <input type="radio" name="radios" id="radios-0" value="Moto" checked="checked">
+      Moto
+    </label> 
+    <label class="radio-inline" for="radios-1">
+      <input type="radio" name="radios" id="radios-1" value="Carro">
+      Carro
+    </label> 
+    <label class="radio-inline" for="radios-2">
+      <input type="radio" name="radios" id="radios-2" value="Bus">
+      Bus
+    </label> 
+    <label class="radio-inline" for="radios-3">
+      <input type="radio" name="radios" id="radios-3" value="Bicicleta">
+      Bicicleta
+    </label> 
+    <label class="radio-inline" for="radios-4">
+      <input type="radio" name="radios" id="radios-4" value="Lancha">
+      Lancha
+    </label>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+		        <input type="submit" wz-next  class="pull-right" value="Finish now" />
+		    </wz-step>
+
+
+		</wizard>
+
+
+			
+	        </div>	     
+		     </div>
+
+		</div>

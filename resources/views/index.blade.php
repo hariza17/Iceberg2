@@ -34,6 +34,8 @@
 	<link rel="stylesheet" href="/css/calendar.min.css">
 
 	<link rel="stylesheet" href="/bower_components/fullcalendar/dist/fullcalendar.css">
+	<link rel="stylesheet" href="/bower_components/angular-wizard/dist/angular-wizard.min.css">
+
 	<link rel="stylesheet" href="/css/profile.min.css">
 	<link rel="stylesheet" href="/css/team.min.css">
 	<link rel="stylesheet" href="/css/select2.min.css">
@@ -97,6 +99,10 @@
 	<script type="text/javascript" src="/bower_components/angular-ui-calendar/src/calendar.js"></script>
 	<script type="text/javascript" src="/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
 	<script type="text/javascript" src="/bower_components/fullcalendar/dist/gcal.js"></script>
+
+	<script type="text/javascript" src="/bower_components/angular-wizard/dist/angular-wizard.min.js"></script>
+
+
 
 	
 

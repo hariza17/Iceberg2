@@ -14,7 +14,9 @@ var icebergApp = angular.module("icebergApp", [
 	'ui.bootstrap',
 	'angular-click-outside',
 	'am.multiselect',
-    'ui.calendar'
+    'ui.calendar',
+    'ui.bootstrap.modal',
+    'mgo-angular-wizard'
 ]);
 
 icebergApp.filter('capitalize', function () {
@@ -23,7 +25,37 @@ icebergApp.filter('capitalize', function () {
 	}
 });
 
-icebergApp.config(['$stateProvider', '$urlRouterProvider', 'toastrConfig','$locationProvider', function ($stateProvider, $urlRouterProvider, toastrConfig,$locationProvider) {
+icebergApp.provider('modalState', function ($stateProvider) {
+    var provider = this;
+    this.$get = function () {
+        return provider;
+    };
+    this.state = function (stateName, options) {
+        //console.log(options);
+        var modalInstance;
+        $stateProvider.state(stateName, {
+            url: options.url,
+            onEnter: function ($uibModal, $state) {
+                modalInstance = $uibModal.open(options);
+                modalInstance.result['finally'](function () {
+                    modalInstance = null;
+                    if ($state.$current.name === stateName) {
+                        $state.go('^');
+                    }
+                });
+            },
+            onExit: function () {
+                if (modalInstance) {
+                    modalInstance.close();
+                }
+            },
+            data:options.data
+        });
+    };
+});
+
+
+icebergApp.config(['$stateProvider', '$urlRouterProvider', 'toastrConfig','$locationProvider','modalStateProvider', function ($stateProvider, $urlRouterProvider, toastrConfig,$locationProvider, modalStateProvider) {
 	angular.extend(toastrConfig, {
 		autoDismiss: false,
 		containerId: 'toast-container',
@@ -198,7 +230,21 @@ icebergApp.config(['$stateProvider', '$urlRouterProvider', 'toastrConfig','$loca
                     url: '/programacion',
                     templateUrl: '/js/app/views/programacion/base.html',
                     controller: 'programacionController' 
-                })
+                });
+                /*seccion2
+                .state('main.seccion',{
+                    url: '/secciones',
+                    templateUrl: '/js/app/views/beneficiarios/templates/seccion2.html'
+                });*/
+
+                modalStateProvider.state('main.beneficiarios.detalle.seccion', {
+                    url: '/ficha-de-informacion',
+                    templateUrl: '/js/app/views/beneficiarios/templates/seccion2.html',
+                    //controller: '',
+                    size: 'lg',
+                    windowClass: 'app-modal-window'
+                });
+
                 /*
                 .state('main.programacion.crear', {
                      url: '/crear',

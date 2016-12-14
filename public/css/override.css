@@ -215,3 +215,22 @@ input.cmn-toggle-round:checked + label:after {
 .modal{
 	z-index: 100000 !important;
 }
+
+.app-modal-window .modal-dialog {
+  width: 90%;
+}
+
+.step.done{
+	color: #000;
+	background-color: #fff;
+}
+
+.step.current{
+	color: #000;
+	background-color: #fff;
+}
+
+.align{
+
+	text-align: left;
+}

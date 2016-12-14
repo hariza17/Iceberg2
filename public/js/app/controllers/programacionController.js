@@ -12,22 +12,21 @@ controllerModule
 				
 			$scope.NewEvent = {};
 
-		function clearCalendar(){
+			function clearCalendar(){
 				if(uiCalendarConfig.calendars.myCalendar != null){
 					uiCalendarConfig.calendars.myCalendar.fullCalendar('removeEvents');
 					uiCalendarConfig.calendars.myCalendar.fullCalendar('unselect');
 
 				}
-
-			}
-
+			};
 
 			$rootScope.getAllProgramaciones = function (){
 				clearCalendar();
     			programacionService.getAllProgramacion().then(function successCallBack(response){
     				$scope.events.slice(0, $scope.events.length);
-    				console.log(response.data);
-    				angular.forEach(response.data, function(value){
+    				// console.log($scope.events.id);
+    				    angular.forEach(response.data, function(value){
+    				    //console.log(value.id);
     					$scope.events.push({
     						id: value.id,//cambiar
     						title: value.actividad_id,
@@ -56,8 +55,6 @@ controllerModule
 		            		}
 		            	}
 	       			};
-			 
-
 
 	        	var modal = $uibModal.open($scope.option);
 	        	modal.result.then(function (data){
@@ -114,8 +111,8 @@ controllerModule
                             left: 'today',
                             center: ' prev, title, next',
                             right: 'month  agendaWeek agendaDay'
-                        }, 
-                        timeFormat: {
+                        },
+						timeFormat: {
                         	month: ' ',
                         	agenda: 'h:mm t'
                         },
@@ -125,8 +122,8 @@ controllerModule
        						$rootScope.titulo = "Agregar programación";
        						$rootScope.boton= "Guardar";
        						//mostrar()
-                        	var fromDate= moment(start).format('YYYY/MM/DD H:mm');
-                        	var endDate= moment(end).format('YYYY/MM/DD H:mm');
+                        	var fromDate = moment(start).format('YYYY/MM/DD H:mm');
+                        	var endDate = moment(end).format('YYYY/MM/DD H:mm');
                         	$scope.NewEvent = {
                         		id : 0,
                         		fecha_inicio: fromDate,
@@ -135,13 +132,11 @@ controllerModule
                         		observaciones: '',
                         		zona_id: ''
                         	}
-                        	  console.log($scope.NewEvent);
+                        	//console.log($scope.NewEvent);
                         	$scope.open();
                         },
                     	eventClick: function (event){
-                    	//$scope.open(event);
        						$scope.SelectedEvent = event;
-       						//console.log(event.start + "   " + event.end);
        						$rootScope.titulo = "Editar programación";
        						$rootScope.boton= "Actualizar";
                         	var fromDate = moment(event.start).format('YYYY/MM/DD  H:mm');
@@ -161,8 +156,6 @@ controllerModule
                     }
                 };
             
-
-
     }])
 	.controller('modalController', ['$scope', 'programacionService',
     '$stateParams', '$location', 'toastr', '$rootScope','$uibModalInstance','NewEvent','zonaService','actividadService',
